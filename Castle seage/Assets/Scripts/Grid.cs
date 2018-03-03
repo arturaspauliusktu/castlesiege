@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Grid : MonoBehaviour {
 
-    public float size = 1f;
+    public float size;
 	// Use this for initialization
 	void Start () {
 		
@@ -20,12 +20,11 @@ public class Grid : MonoBehaviour {
         position -= transform.position;
 
         int xCount = Mathf.RoundToInt(position.x / size);
-        int yCount = Mathf.RoundToInt(position.y / size);
         int zCount = Mathf.RoundToInt(position.z / size);
 
         Vector3 result = new Vector3(
             (float)xCount * size,
-            (float)yCount * size,
+            0,
             (float)zCount * size);
 
         result += transform.position;
