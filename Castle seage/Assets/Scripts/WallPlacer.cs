@@ -65,7 +65,6 @@ public class WallPlacer : MonoBehaviour
         {
             var finalPosition = grid.GetNearestPointOnGrid(clickPoint);
             GameObject wallInstance = Instantiate(wall, finalPosition, new Quaternion(-90, 0, 0, 90));
-            wallInstance.AddComponent<Rigidbody>();
             wallInstance.AddComponent<BoxCollider>();
         }
         //GameObject.CreatePrimitive(PrimitiveType.Cube).transform.position = finalPosition;
