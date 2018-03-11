@@ -22,10 +22,10 @@ MonoBehaviour:
     y: 30
     width: 1536
     height: 731
-  m_MinSize: {x: 911, y: 442}
+  m_MinSize: {x: 911, y: 421}
   m_MaxSize: {x: 22006, y: 10021}
   vertical: 0
-  controlID: 917
+  controlID: 8839
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -49,9 +49,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 417
+    y: 467
     width: 819
-    height: 385
+    height: 335
   m_PersistentViewDataDictionary: {fileID: 0}
   m_MaximizeOnPlay: 1
   m_Gizmos: 0
@@ -63,8 +63,8 @@ MonoBehaviour:
     m_VRangeLocked: 0
     m_HBaseRangeMin: -409.5
     m_HBaseRangeMax: 409.5
-    m_VBaseRangeMin: -184
-    m_VBaseRangeMax: 184
+    m_VBaseRangeMin: -159
+    m_VBaseRangeMax: 159
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -82,9 +82,9 @@ MonoBehaviour:
       x: 0
       y: 17
       width: 819
-      height: 368
+      height: 318
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 409.5, y: 184}
+    m_Translation: {x: 409.5, y: 159}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -92,14 +92,14 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -409.5
-      y: -184
+      y: -159
       width: 819
-      height: 368
+      height: 318
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_TargetTexture: {fileID: 0}
   m_CurrentColorSpace: 0
-  m_LastWindowPixelSize: {x: 819, y: 385}
+  m_LastWindowPixelSize: {x: 819, y: 335}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000100000100
@@ -123,10 +123,10 @@ MonoBehaviour:
     y: 0
     width: 821
     height: 731
-  m_MinSize: {x: 202, y: 442}
-  m_MaxSize: {x: 4002, y: 8042}
+  m_MinSize: {x: 202, y: 421}
+  m_MaxSize: {x: 4002, y: 8021}
   vertical: 1
-  controlID: 918
+  controlID: 8840
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 821
-    height: 325
+    height: 375
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 5}
@@ -178,17 +178,17 @@ MonoBehaviour:
     x: 0
     y: 92
     width: 819
-    height: 304
+    height: 354
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 287.30930146022627
+  lastFramingTime: 1974.7043383402413
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 7.1971097, y: 2.3648796, z: 16.426914}
+    m_Target: {x: 1.6400585, y: -1.9820547, z: -3.953034}
     speed: 2
-    m_Value: {x: 7.1971097, y: 2.3648796, z: 16.426914}
+    m_Value: {x: 1.6400585, y: -1.9820547, z: -3.953034}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -216,9 +216,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0.23861875, y: 0.5872347, z: -0.18669026, w: 0.7505755}
   m_Size:
-    m_Target: 24.12368
+    m_Target: 31.880848
     speed: 2
-    m_Value: 24.12368
+    m_Value: 31.880848
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -272,9 +272,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 325
+    y: 375
     width: 821
-    height: 406
+    height: 356
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 2}
@@ -335,10 +335,10 @@ MonoBehaviour:
     height: 710
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d6050000
+    scrollPos: {x: 0, y: 667}
+    m_SelectedIDs: b8290000
     m_LastClickedID: 0
-    m_ExpandedIDs: 9efbffff00000000
+    m_ExpandedIDs: 9efbffff000000003e300000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -425,18 +425,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts
+    - Assets/Resources/Materials/BuildMaterials
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Resources/Materials/BuildMaterials
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Github\castlesiege\Castle seage
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: e02d0000
-    m_LastClickedID: 11744
+    m_SelectedIDs: e62d0000
+    m_LastClickedID: 11750
     m_ExpandedIDs: 000000007c270000ae290000dc2d0000682e0000d22e00000a2f000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -490,8 +490,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: d6050000
-    m_LastClickedInstanceID: 1494
+    m_SelectedInstanceIDs: b8290000
+    m_LastClickedInstanceID: 10680
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 46880000
     m_RenameOverlay:

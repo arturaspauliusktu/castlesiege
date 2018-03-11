@@ -23,13 +23,8 @@ public class BuildableObject : MonoBehaviour {
 
     void OnTriggerExit(Collider collision)
     {
-        Material buildDenied = Resources.Load("Materials/BuildMaterials/BuildAlowed", typeof(Material)) as Material;
-        buildableBox.GetComponent<Renderer>().material = buildDenied;
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        Material buildDenied = Resources.Load("Materials/BuildMaterials/BuildDenied", typeof(Material)) as Material;
-        buildableBox.GetComponent<Renderer>().material = buildDenied;
+            Material buildDenied = Resources.Load("Materials/BuildMaterials/BuildAlowed", typeof(Material)) as Material;
+            buildableBox.GetComponent<Renderer>().material = buildDenied;
+     
     }
 }
