@@ -212,8 +212,9 @@ namespace GK {
 			mesh.vertices = verts;
 			mesh.triangles = tris;
 			mesh.normals = norms;
+            GameObject newMesh = Resources.Load("Sphere") as GameObject;
 
-			return mesh;
+            return mesh;
 		}
 	}
 }
