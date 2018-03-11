@@ -25,6 +25,11 @@ public class BuildableObject : MonoBehaviour {
     {
             Material buildDenied = Resources.Load("Materials/BuildMaterials/BuildAlowed", typeof(Material)) as Material;
             buildableBox.GetComponent<Renderer>().material = buildDenied;
-     
+    }
+
+    void OnTriggerStay(Collider collision)
+    {
+        Material buildDenied = Resources.Load("Materials/BuildMaterials/BuildDenied", typeof(Material)) as Material;
+        buildableBox.GetComponent<Renderer>().material = buildDenied;
     }
 }

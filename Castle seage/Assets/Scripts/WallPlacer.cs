@@ -45,7 +45,7 @@ public class WallPlacer : MonoBehaviour
         finalPendingBuildPosition = grid.GetNearestPointOnGrid(finalPendingBuildPosition);
         finalPendingBuildPosition.y = 0;
         buildable.transform.position = finalPendingBuildPosition;
-        buildableBox.transform.position = finalPendingBuildPosition + new Vector3(0, 0.5f, 0.75f);
+        buildableBox.transform.position = finalPendingBuildPosition + new Vector3(0, 0.5f, 0f);
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hitInfo;
@@ -56,6 +56,13 @@ public class WallPlacer : MonoBehaviour
                 placeBuildingNear(hitInfo.point);
             }
         }
+
+        if (Input.GetKeyDown("r"))
+        {
+            buildable.transform.eulerAngles = new Vector3(buildable.transform.eulerAngles.x, buildable.transform.eulerAngles.y, buildable.transform.eulerAngles.z + 90);
+            buildableBox.transform.eulerAngles = buildable.transform.eulerAngles;
+            buildableBox.transform.position = buildable.transform.position;
+        }
     }
 
     private void placeBuildingNear(Vector3 clickPoint)
@@ -63,10 +70,15 @@ public class WallPlacer : MonoBehaviour
         Debug.Log(buildableBox.GetComponent<Renderer>().material.color.r == 0.2512111f);
         if (buildableBox.GetComponent<Renderer>().material.color.r == 0.2512111f)
         {
-            var finalPosition = grid.GetNearestPointOnGrid(clickPoint);
-            GameObject wallInstance = Instantiate(wall, finalPosition, new Quaternion(-90, 0, 0, 90));
-            wallInstance.AddComponent<Rigidbody>();
-            wallInstance.AddComponent<BoxCollider>();
+            var finalPosition = buildable.transform.GetChild(0).transform.position;
+            var finalRotation = buildable.transform.GetChild(0).transform.rotation;
+            GameObject wallToBuild = Instantiate(wall.transform.GetChild(0).gameObject);
+            wallToBuild.transform.position = finalPosition;
+            wallToBuild.transform.rotation = finalRotation;
+            wallToBuild.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+            //GameObject wallInstance = Instantiate(wallToBuild, finalPosition, new Quaternion(-90, 0, 0, 90));
+            wallToBuild.AddComponent<Rigidbody>();
+            wallToBuild.AddComponent<BoxCollider>();
         }
         //GameObject.CreatePrimitive(PrimitiveType.Cube).transform.position = finalPosition;
     }
