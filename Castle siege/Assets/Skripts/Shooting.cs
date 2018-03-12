@@ -5,7 +5,8 @@ using UnityEngine;
 public class Shooting : MonoBehaviour {
 
     public bool isFiring;
-
+    public Animator animation;
+    
     //public Projectile projectile;
     public float projectileSpeed;
 
@@ -19,7 +20,7 @@ public class Shooting : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        animation = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -34,11 +35,13 @@ public class Shooting : MonoBehaviour {
                 GameObject gun = GameObject.FindGameObjectsWithTag("gun")[0];
                 //newProject.speed = projectileSpeed;
                 newProject.AddForce(gun.transform.forward * force);
+                animation.Play("fire");
+
             }
         }
         else
         {
-            shotCounter = 0;
+            shotCounter--;
         }
 	}
 }
