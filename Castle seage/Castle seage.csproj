@@ -284,7 +284,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BuildableObject.cs" />
     <Compile Include="Assets\Scripts\Grid.cs" />
-    <Compile Include="Assets\Scripts\WallPlacer.cs" />
+    <Compile Include="Assets\Scripts\WallPlacer1.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

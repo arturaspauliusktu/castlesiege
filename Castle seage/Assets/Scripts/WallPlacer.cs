@@ -18,7 +18,7 @@ public class WallPlacer : MonoBehaviour
         buildable = Instantiate(wall, new Vector3(0, 0, 0), new Quaternion(-90, 0, 0, 90));
         buildableBox = GameObject.CreatePrimitive(PrimitiveType.Cube);
         buildableBox.GetComponent<Collider>().isTrigger = true;
-        buildableBox.transform.localScale = new Vector3(1, 1.5f, 1.6f);
+        buildableBox.transform.localScale = new Vector3(1.129f, 1.629f, 1.729f);
         
         //buildableBox.GetComponent<Material>() = 
 
@@ -30,7 +30,7 @@ public class WallPlacer : MonoBehaviour
         Renderer rend = buildableBox.GetComponent<Renderer>();
         rend.enabled = true;
 
-        buildable.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+        buildable.transform.localScale = new Vector3(0.129f, 0.129f, 0.129f);
     }
 
     // Update is called once per frame
@@ -45,7 +45,7 @@ public class WallPlacer : MonoBehaviour
         finalPendingBuildPosition = grid.GetNearestPointOnGrid(finalPendingBuildPosition);
         finalPendingBuildPosition.y = 0;
         buildable.transform.position = finalPendingBuildPosition;
-        buildableBox.transform.position = finalPendingBuildPosition + new Vector3(0, 0.5f, 0f);
+        buildableBox.transform.position = finalPendingBuildPosition + new Vector3(0, 0.55f, 0f);
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hitInfo;
@@ -75,7 +75,7 @@ public class WallPlacer : MonoBehaviour
             GameObject wallToBuild = Instantiate(wall.transform.GetChild(0).gameObject);
             wallToBuild.transform.position = finalPosition;
             wallToBuild.transform.rotation = finalRotation;
-            wallToBuild.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+            wallToBuild.transform.localScale = new Vector3(0.129f, 0.129f, 0.129f);
             //GameObject wallInstance = Instantiate(wallToBuild, finalPosition, new Quaternion(-90, 0, 0, 90));
             wallToBuild.AddComponent<Rigidbody>();
             wallToBuild.AddComponent<BoxCollider>();

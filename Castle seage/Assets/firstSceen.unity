@@ -1150,10 +1150,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 1
-  borderTop: 0
-  borderBottom: 0
-  borderLeft: 0
-  borderRight: 0
+  borderTop: 5
+  borderBottom: -5
+  borderLeft: -5
+  borderRight: 5
 --- !u!4 &372269147
 Transform:
   m_ObjectHideFlags: 0
@@ -2857,7 +2857,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1060769165}
-  - component: {fileID: 1060769166}
   - component: {fileID: 1060769167}
   m_Layer: 0
   m_Name: Placer
@@ -2879,17 +2878,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1060769166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1060769164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 304cb93126f40d74492e74f4e35f04ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1060769167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2898,7 +2886,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1060769164}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7d9a02a1bcb77544bc0cf2069387a70, type: 3}
+  m_Script: {fileID: 11500000, guid: de0a2ab6faa5eed4a8b700f217ff270f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   wall: {fileID: 1630703037973438, guid: 84ffbe1add7dd8e4294c29816f5ac0fa, type: 2}
