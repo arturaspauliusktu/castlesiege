@@ -10,15 +10,25 @@ public class WallPlacer1 : MonoBehaviour
     private Grid grid;
     private GameObject buildable;
     private GameObject buildableBox;
+    private bool isBuildEnabled;
 
     // Use this for initialization
     void Start()
     {
+        
+    }
+
+    void enableBuild()
+    {
+        Debug.Log("sdadsa");
         grid = FindObjectOfType<Grid>();
-        buildable = Instantiate(wall, new Vector3(0, 0, 0), new Quaternion(-90, 0, 0, 90));
+        //buildable = Instantiate(wall, new Vector3(0, 0, 0), new Quaternion(-90, 0, 0, 90));
+        buildable = new GameObject("breakableWall");
+        buildable.AddComponent<FracturedObject>();
+        buildable = Instantiate(wall);
         buildableBox = GameObject.CreatePrimitive(PrimitiveType.Cube);
         buildableBox.GetComponent<Collider>().isTrigger = true;
-        buildableBox.transform.localScale = buildable.transform.GetChild(0).GetComponent<Renderer>().bounds.size;
+        buildableBox.transform.localScale = buildable.transform.GetChild(0).transform.GetChild(200).GetComponent<Renderer>().bounds.size;
 
         //buildableBox.GetComponent<Material>() = 
 
@@ -29,40 +39,60 @@ public class WallPlacer1 : MonoBehaviour
 
         Renderer rend = buildableBox.GetComponent<Renderer>();
         rend.enabled = true;
+        isBuildEnabled = true;
+    }
 
-        buildable.transform.localScale = new Vector3(0.12f, 0.12f, 0.12f);
+    void disableBuild()
+    {
+        isBuildEnabled = false;
+        Destroy(buildable);
+        Destroy(buildableBox);
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        Ray pendingBuildSpot = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit pendingInfo;
-        Physics.Raycast(pendingBuildSpot, out pendingInfo);
-
-        Vector3 finalPendingBuildPosition = pendingInfo.point;
-        finalPendingBuildPosition = grid.GetNearestPointOnGrid(finalPendingBuildPosition);
-        finalPendingBuildPosition.y = 0;
-        buildable.transform.position = finalPendingBuildPosition;
-        buildableBox.transform.position = finalPendingBuildPosition + new Vector3(0, 0.7f, 0);
-        if (Input.GetMouseButtonDown(0))
+        if (isBuildEnabled)
         {
-            RaycastHit hitInfo;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray pendingBuildSpot = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit pendingInfo;
+            Physics.Raycast(pendingBuildSpot, out pendingInfo);
 
-            if (Physics.Raycast(ray, out hitInfo))
+            Vector3 finalPendingBuildPosition = pendingInfo.point;
+            finalPendingBuildPosition = grid.GetNearestPointOnGrid(finalPendingBuildPosition);
+            finalPendingBuildPosition.y = 0;
+            buildable.transform.position = finalPendingBuildPosition;
+            buildableBox.transform.position = finalPendingBuildPosition + new Vector3(0, 0.7f, 0);
+            if (Input.GetMouseButtonDown(0))
             {
-                placeBuildingNear(hitInfo.point);
+                RaycastHit hitInfo;
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                if (Physics.Raycast(ray, out hitInfo))
+                {
+                    placeBuildingNear(hitInfo.point);
+                }
+            }
+
+            if (Input.GetKeyDown("r"))
+            {
+                buildable.transform.eulerAngles = new Vector3(buildable.transform.eulerAngles.x, buildable.transform.eulerAngles.y, buildable.transform.eulerAngles.z + 90);
+     
+                buildableBox.transform.position = buildable.transform.position + new Vector3(0, 0.8f, 0);
+                buildableBox.transform.localScale = buildable.transform.GetChild(0).transform.GetChild(200).GetComponent<Renderer>().bounds.size;
             }
         }
 
-        if (Input.GetKeyDown("r"))
+        if (Input.GetKeyDown("c"))
         {
-            buildable.transform.eulerAngles = new Vector3(buildable.transform.eulerAngles.x, buildable.transform.eulerAngles.y, buildable.transform.eulerAngles.z + 90);
-     
-            buildableBox.transform.position = buildable.transform.position + new Vector3(0, 0.8f, 0);
-            buildableBox.transform.localScale = buildable.transform.GetChild(0).GetComponent<Renderer>().bounds.size;
+            if (!isBuildEnabled)
+            {
+                enableBuild();
+            }
+            else
+            {
+                disableBuild();
+            }
         }
     }
 
@@ -71,15 +101,14 @@ public class WallPlacer1 : MonoBehaviour
         Debug.Log(buildableBox.GetComponent<Renderer>().material.color.r == 0.2512111f);
         if (buildableBox.GetComponent<Renderer>().material.color.r == 0.2512111f)
         {
-            var finalPosition = buildable.transform.GetChild(0).transform.position;
-            var finalRotation = buildable.transform.GetChild(0).transform.rotation;
-            GameObject wallToBuild = Instantiate(wall.transform.GetChild(0).gameObject);
+            var finalPosition = buildable.transform.position;
+            var finalRotation = buildable.transform.rotation;
+            GameObject wallToBuild = Instantiate(wall);
             wallToBuild.transform.position = finalPosition;
             wallToBuild.transform.rotation = finalRotation;
-            wallToBuild.transform.localScale = new Vector3(0.129f, 0.129f, 0.129f);
             //GameObject wallInstance = Instantiate(wallToBuild, finalPosition, new Quaternion(-90, 0, 0, 90));
-            wallToBuild.AddComponent<Rigidbody>();
-            wallToBuild.AddComponent<BoxCollider>();
+            //wallToBuild.AddComponent<Rigidbody>();
+            //wallToBuild.AddComponent<BoxCollider>();
         }
         //GameObject.CreatePrimitive(PrimitiveType.Cube).transform.position = finalPosition;
     }
