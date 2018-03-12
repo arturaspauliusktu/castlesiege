@@ -282,8 +282,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\ClickMovement.cs" />
-    <Compile Include="Assets\Movement.cs" />
+    <Compile Include="Assets\Skripts\CatapultBall.cs" />
+    <Compile Include="Assets\Skripts\ClickMovement.cs" />
+    <Compile Include="Assets\Skripts\Movement.cs" />
+    <Compile Include="Assets\Skripts\Projectile.cs" />
+    <Compile Include="Assets\Skripts\Shooting.cs" />
+    <Compile Include="Assets\Skripts\Unit.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
