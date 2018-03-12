@@ -292,9 +292,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BreakableSurface.cs" />
+    <Compile Include="Assets\Scripts\BuildableObject.cs" />
     <Compile Include="Assets\Scripts\DestructionActivation.cs" />
     <Compile Include="Assets\Scripts\FadeOut.cs" />
+    <Compile Include="Assets\Scripts\Grid.cs" />
     <Compile Include="Assets\Scripts\Shoot.cs" />
+    <Compile Include="Assets\Scripts\WallPlacer.cs" />
+    <Compile Include="Assets\Scripts\WallPlacer1.cs" />
     <Compile Include="Assets\Skripts\CatapultBall.cs" />
     <Compile Include="Assets\Skripts\ClickMovement.cs" />
     <Compile Include="Assets\Skripts\Movement.cs" />
