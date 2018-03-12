@@ -6,13 +6,16 @@ public class Shooting : MonoBehaviour {
 
     public bool isFiring;
 
-    public Projectile projectile;
+    //public Projectile projectile;
     public float projectileSpeed;
 
     public float timeBetweenShots;
     private float shotCounter;
 
     public Transform spawnPoint;
+
+    public Rigidbody project;
+    public float force;
 
 	// Use this for initialization
 	void Start () {
@@ -27,8 +30,10 @@ public class Shooting : MonoBehaviour {
             if (shotCounter <= 0)
             {
                 shotCounter = timeBetweenShots;
-                Projectile newProject = (Projectile)Instantiate(projectile, spawnPoint.position, spawnPoint.rotation);
-                newProject.speed = projectileSpeed;
+                Rigidbody newProject = (Rigidbody)Instantiate(project, spawnPoint.position, spawnPoint.rotation);
+                GameObject gun = GameObject.FindGameObjectsWithTag("gun")[0];
+                //newProject.speed = projectileSpeed;
+                newProject.AddForce(gun.transform.forward * force);
             }
         }
         else
