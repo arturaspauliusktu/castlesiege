@@ -5,9 +5,16 @@ using UnityEngine;
 public class Grid : MonoBehaviour {
 
     public float size;
+    public float borderTop;
+    public float borderBottom;
+    public float borderLeft;
+    public float borderRight;
+
+    private bool isOutOfBounds;
+
 	// Use this for initialization
 	void Start () {
-		
+        isOutOfBounds = true;
 	}
 	
 	// Update is called once per frame
@@ -28,6 +35,23 @@ public class Grid : MonoBehaviour {
             (float)zCount * size);
 
         result += transform.position;
+
+        if (result.x > borderTop)
+        {
+            result.x = borderTop;
+        }
+        if (result.x < borderBottom)
+        {
+            result.x = borderBottom;
+        }
+        if (result.z > borderRight)
+        {
+            result.z = borderRight;
+        }
+        if (result.z < borderLeft)
+        {
+            result.z = borderLeft;
+        }
 
         return result;
     }

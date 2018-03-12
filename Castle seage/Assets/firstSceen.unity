@@ -1150,6 +1150,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 1
+  borderTop: 0
+  borderBottom: 0
+  borderLeft: 0
+  borderRight: 0
 --- !u!4 &372269147
 Transform:
   m_ObjectHideFlags: 0
