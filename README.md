@@ -1,7 +1,5 @@
 # castlesiege
 Semestro Projetas
-# castlesiege
-Semestro Projetas
 
 Space                    -   Šaudyti
 Arrow Left, Arrow Right  -   Judėti šonais.
