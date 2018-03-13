@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour {
 
-    public Shooting shot;
+    public int speed = 1;
 
 	// Use this for initialization
 	void Start () {
@@ -13,13 +13,18 @@ public class Unit : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetMouseButtonDown(1))
+        if(transform.position.z <= 55f && transform.position.z >= -55f)
         {
-            shot.isFiring = true;
+            transform.Translate(0f, 0f, Input.GetAxis("Horizontal") * Time.deltaTime * speed);
         }
-        if (Input.GetMouseButtonUp(1))
+        else if(transform.position.z >= 55f)
         {
-            shot.isFiring = false;
+            transform.Translate(0f, 0f, Time.deltaTime * -speed);
+        }
+
+        else if(transform.position.z <= -55f)
+        {
+            transform.Translate(0f, 0f, Time.deltaTime * speed);
         }
 	}
 }
