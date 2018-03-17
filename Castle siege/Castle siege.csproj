@@ -291,22 +291,24 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\scri.cs" />
+    <Compile Include="Assets\PivotManager.cs" />
     <Compile Include="Assets\Scripts\BreakableSurface.cs" />
     <Compile Include="Assets\Scripts\BuildableObject.cs" />
     <Compile Include="Assets\Scripts\CamCtrl.cs" />
+    <Compile Include="Assets\Scripts\CatapultBall.cs" />
+    <Compile Include="Assets\Scripts\ClickMovement.cs" />
     <Compile Include="Assets\Scripts\DestructionActivation.cs" />
     <Compile Include="Assets\Scripts\FadeOut.cs" />
     <Compile Include="Assets\Scripts\Grid.cs" />
+    <Compile Include="Assets\Scripts\Movement.cs" />
+    <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
+    <Compile Include="Assets\Scripts\Projectile.cs" />
     <Compile Include="Assets\Scripts\Shoot.cs" />
+    <Compile Include="Assets\Scripts\Unit_Scripts\Shooting.cs" />
+    <Compile Include="Assets\Scripts\Unit_Scripts\Unit.cs" />
+    <Compile Include="Assets\Scripts\Unit_Scripts\Unit_Health.cs" />
     <Compile Include="Assets\Scripts\WallPlacer.cs" />
     <Compile Include="Assets\Scripts\WallPlacer1.cs" />
-    <Compile Include="Assets\Skripts\CatapultBall.cs" />
-    <Compile Include="Assets\Skripts\ClickMovement.cs" />
-    <Compile Include="Assets\Skripts\Movement.cs" />
-    <Compile Include="Assets\Skripts\Projectile.cs" />
-    <Compile Include="Assets\Skripts\Shooting.cs" />
-    <Compile Include="Assets\Skripts\Unit.cs" />
     <Compile Include="Assets\Ultimate Game Tools\Fracturing\CDT\P2T.cs" />
     <Compile Include="Assets\Ultimate Game Tools\Fracturing\CDT\Triangulation\Delaunay\DelaunayTriangle.cs" />
     <Compile Include="Assets\Ultimate Game Tools\Fracturing\CDT\Triangulation\Delaunay\Sweep\AdvancingFront.cs" />

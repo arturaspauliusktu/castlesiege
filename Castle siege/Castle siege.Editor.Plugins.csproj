@@ -285,13 +285,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Castle siege.Plugins.csproj">
-      <Project>{465BCAA0-EEF5-AFEF-5A95-04E8EA4E1AE5}</Project>
-      <Name>Castle siege.Plugins</Name>
-    </ProjectReference>
     <ProjectReference Include="Castle siege.csproj">
       <Project>{47CC6A49-A063-46D1-DBA4-E049C579A149}</Project>
       <Name>Castle siege</Name>
+    </ProjectReference>
+    <ProjectReference Include="Castle siege.Plugins.csproj">
+      <Project>{465BCAA0-EEF5-AFEF-5A95-04E8EA4E1AE5}</Project>
+      <Name>Castle siege.Plugins</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
