@@ -2,15 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Unit_Health : MonoBehaviour {
+public class Unit_Health {
 
-    public int maxUnitHealth = 100;
+    private int maxUnitHealth;
 
     private int UnitHealth;
 
-    private void Start()
+    public Unit_Health(int maxUnitHealth, int unitHealth)
     {
-        UnitHealth = maxUnitHealth;
+        if(unitHealth > maxUnitHealth)
+        {
+            this.maxUnitHealth = maxUnitHealth;
+            this.UnitHealth = maxUnitHealth;
+        }
+        else
+        {
+            this.maxUnitHealth = maxUnitHealth;
+            this.UnitHealth = unitHealth;
+        }
+    }
+
+    public Unit_Health(int maxUnitHealth)
+    {
+        this.maxUnitHealth = maxUnitHealth;
     }
 
     public int getHealth() { return UnitHealth; }
@@ -25,7 +39,7 @@ public class Unit_Health : MonoBehaviour {
     public bool giveDamage(int dmg)
     {
         UnitHealth -= dmg;
-        if (UnitHealth < 0)
+        if (UnitHealth <= 0)
             return true;
         return false;
     }

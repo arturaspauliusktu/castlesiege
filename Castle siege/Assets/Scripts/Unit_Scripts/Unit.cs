@@ -4,27 +4,40 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour {
 
-    public int speed = 1;
+    public int MaxUnitHealth = 100;
+    public int UnitHealth = 100;
+    Unit_Health health;
+    Rigidbody rb;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        if(transform.position.z <= 55f && transform.position.z >= -55f)
+    // Use this for initialization
+    void Start () {
+        health = new Unit_Health(MaxUnitHealth, UnitHealth);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+
+        if(collision.impactForceSum.magnitude > 10.0f)
         {
-            transform.Translate(0f, 0f, Input.GetAxis("Horizontal") * Time.deltaTime * speed);
-        }
-        else if(transform.position.z >= 55f)
-        {
-            transform.Translate(0f, 0f, Time.deltaTime * -speed);
+            Debug.Log(health.getHealth());
+
+            if (health.giveDamage(10))
+            {
+                // Dabar tai tik pritaikyta katapultai, bet kiekvienas unitas turetu tureti savo mirimo mechaminzma.
+                Debug.Log(health.getHealth());
+                foreach (Transform child in transform)
+                {
+                    child.gameObject.AddComponent<Rigidbody>();
+                    Debug.Log(child);
+                }
+                Destroy(transform.gameObject, 5);
+            }
         }
 
-        else if(transform.position.z <= -55f)
-        {
-            transform.Translate(0f, 0f, Time.deltaTime * speed);
-        }
+    }
+
+    // Update is called once per frame
+    void Update () {
+        UnitHealth = health.getHealth();
 	}
 }
