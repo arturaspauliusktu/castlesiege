@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 11a5c2a3ac6e2844bbc962eee9f2a52d
-timeCreated: 1520771926
+guid: 3acf521ae1c900e4981c2c7087a8103b
+timeCreated: 1521240339
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -52,7 +52,6 @@ ModelImporter:
     4300010: wheel2
     4300012: wheel3
     4300014: wheel4
-    11100000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -127,7 +126,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 1
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
