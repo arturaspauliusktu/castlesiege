@@ -4,6 +4,15 @@
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
+Castle siege/Assets/WA11.unity
+Castle siege/Castle siege.sln
+Castle siege/Library/CurrentLayout.dwlt
+Castle siege/Library/CurrentMaximizeLayout.dwlt
+Castle siege/Library/InspectorExpandedItems.asset
+Castle siege/Library/ScriptAssemblies/Assembly-CSharp.dll
+Castle siege/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb
+Castle siege/Library/assetDatabase3
+Castle siege/Library/expandedItems
 
 # Visual Studio 2015 cache directory
 /.vs/

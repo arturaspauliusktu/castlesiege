@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 212d44f74a2ed3f4aa2e06df67f16db6
-timeCreated: 1520771927
+guid: 260867082e49c7448b3de501acb7e407
+timeCreated: 1521240337
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -144,30 +144,6 @@ ModelImporter:
     4300042: q3
     4300044: q3
     4300046: q3
-    6400000: limb
-    6400002: q1
-    6400004: q1 1
-    6400006: q1 2
-    6400008: q1 3
-    6400010: q2
-    6400012: q2 1
-    6400014: q2 2
-    6400016: q3
-    6400018: q3 1
-    6400020: q3 10
-    6400022: q3 11
-    6400024: q3 2
-    6400026: q3 3
-    6400028: q3 4
-    6400030: q3 5
-    6400032: q3 6
-    6400034: q3 7
-    6400036: q3 8
-    6400038: q3 9
-    6400040: wheel1
-    6400042: wheel2
-    6400044: wheel3
-    6400046: wheel4
     7400000: Take 001
     9500000: //RootNode
   externalObjects: {}
@@ -202,7 +178,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1

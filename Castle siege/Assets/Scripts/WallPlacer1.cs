@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class WallPlacer1 : MonoBehaviour
 {
-
+    public GameObject wallMesh;
     public GameObject wall;
+    public GameObject WariorQueue; 
 
     private Grid grid;
     private GameObject buildable;
     private GameObject buildableBox;
     private bool isBuildEnabled;
+    private bool isBuildableWall;
 
     // Use this for initialization
     void Start()
@@ -20,15 +22,16 @@ public class WallPlacer1 : MonoBehaviour
 
     void enableBuild()
     {
-        Debug.Log("sdadsa");
         grid = FindObjectOfType<Grid>();
-        //buildable = Instantiate(wall, new Vector3(0, 0, 0), new Quaternion(-90, 0, 0, 90));
         buildable = new GameObject("breakableWall");
-        buildable.AddComponent<FracturedObject>();
-        buildable = Instantiate(wall);
+        //buildable.AddComponent<FracturedObject>();
+        buildable = Instantiate(wallMesh);
+        isBuildableWall = true;
+        buildable.transform.localScale = wall.transform.localScale;
+        buildable.transform.rotation = wall.transform.rotation;
         buildableBox = GameObject.CreatePrimitive(PrimitiveType.Cube);
         buildableBox.GetComponent<Collider>().isTrigger = true;
-        buildableBox.transform.localScale = buildable.transform.GetChild(0).transform.GetChild(200).GetComponent<Renderer>().bounds.size;
+        buildableBox.transform.localScale = buildable.GetComponent<Renderer>().bounds.size;
 
         //buildableBox.GetComponent<Material>() = 
 
@@ -45,15 +48,38 @@ public class WallPlacer1 : MonoBehaviour
     void disableBuild()
     {
         isBuildEnabled = false;
+        isBuildableWall = false;
         Destroy(buildable);
         Destroy(buildableBox);
+    }
+
+    void enableWariorBuild()
+    {
+        grid = FindObjectOfType<Grid>();
+        buildable = new GameObject("Warior");
+        buildable = Instantiate(WariorQueue.transform.GetChild(0).gameObject as GameObject);
+        buildableBox = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        buildableBox.GetComponent<Collider>().isTrigger = true;
+        buildableBox.transform.localScale = buildable.GetComponent<Collider>().bounds.size;
+
+        Material buildMaterial = Resources.Load("Materials/BuildMaterials/BuildAlowed", typeof(Material)) as Material;
+        //buildableBox.AddComponent<MeshRenderer>();
+        buildableBox.GetComponent<Renderer>().material = buildMaterial;
+        buildableBox.tag = "buildableBox";
+
+        Renderer rend = buildableBox.GetComponent<Renderer>();
+        rend.enabled = true;
+        isBuildEnabled = true;
+        isBuildableWall = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(isBuildEnabled);
         if (isBuildEnabled)
         {
+            Debug.Log("war");
             Ray pendingBuildSpot = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit pendingInfo;
             Physics.Raycast(pendingBuildSpot, out pendingInfo);
@@ -79,7 +105,7 @@ public class WallPlacer1 : MonoBehaviour
                 buildable.transform.eulerAngles = new Vector3(buildable.transform.eulerAngles.x, buildable.transform.eulerAngles.y, buildable.transform.eulerAngles.z + 90);
      
                 buildableBox.transform.position = buildable.transform.position + new Vector3(0, 0.8f, 0);
-                buildableBox.transform.localScale = buildable.transform.GetChild(0).transform.GetChild(200).GetComponent<Renderer>().bounds.size;
+                buildableBox.transform.localScale = buildable.GetComponent<Renderer>().bounds.size;
             }
         }
 
@@ -88,6 +114,18 @@ public class WallPlacer1 : MonoBehaviour
             if (!isBuildEnabled)
             {
                 enableBuild();
+            }
+            else
+            {
+                disableBuild();
+            }
+        }
+
+        if (Input.GetKeyDown("v"))
+        {
+            if (!isBuildEnabled)
+            {
+                enableWariorBuild();
             }
             else
             {
@@ -103,9 +141,17 @@ public class WallPlacer1 : MonoBehaviour
         {
             var finalPosition = buildable.transform.position;
             var finalRotation = buildable.transform.rotation;
-            GameObject wallToBuild = Instantiate(wall);
-            wallToBuild.transform.position = finalPosition;
-            wallToBuild.transform.rotation = finalRotation;
+            GameObject buildObject = new GameObject();
+            if (isBuildableWall)
+            {
+                 buildObject = Instantiate(wall);
+            }
+            else
+            {
+                 buildObject = Instantiate(buildable);
+            }
+            buildObject.transform.position = finalPosition;
+            buildObject.transform.rotation = finalRotation;
             //GameObject wallInstance = Instantiate(wallToBuild, finalPosition, new Quaternion(-90, 0, 0, 90));
             //wallToBuild.AddComponent<Rigidbody>();
             //wallToBuild.AddComponent<BoxCollider>();
