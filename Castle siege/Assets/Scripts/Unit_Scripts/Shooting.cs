@@ -42,13 +42,17 @@ public class Shooting : MonoBehaviour {
         animation.SetTrigger("Shoot");
         animation.ResetTrigger("Shoot");
         animation.Play("catapult_lose");
-        Rigidbody newProject = (Rigidbody)Instantiate(project, spawnPoint.position, spawnPoint.rotation);
-        GameObject gun = GameObject.FindGameObjectsWithTag("gun")[0];
-        newProject.AddForce(new Vector3(transform.parent.gameObject.transform.rotation.x, transform.parent.gameObject.transform.rotation.y, transform.parent.gameObject.transform.rotation.z) * force, ForceMode.VelocityChange);
     }
 
     public void setReady()
     {
         isReady = true;
+    }
+
+    public void Loose()
+    {
+        Rigidbody newProject = (Rigidbody)Instantiate(project, spawnPoint.position, spawnPoint.rotation);
+        GameObject gun = GameObject.FindGameObjectsWithTag("gun")[0];
+        newProject.AddForce(spawnPoint.transform.forward * force, ForceMode.VelocityChange);
     }
 }
