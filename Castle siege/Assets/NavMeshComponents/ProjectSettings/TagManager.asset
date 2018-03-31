@@ -3,12 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - gun
-  - Obstacle
-  - buildableBox
-  - Door
-  - King
+  tags: []
   layers:
   - Default
   - TransparentFX
