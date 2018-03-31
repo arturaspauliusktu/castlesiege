@@ -6,31 +6,28 @@ public class Unit : MonoBehaviour {
 
     public int MaxUnitHealth = 100;
     public int UnitHealth = 100;
+    bool isAlive = true;
     Unit_Health health;
-    Rigidbody rb;
+    Break br;
 
     // Use this for initialization
     void Start () {
         health = new Unit_Health(MaxUnitHealth, UnitHealth);
+        br = gameObject.GetComponent<Break>();
     }
 
     private void OnCollisionEnter(Collision collision)
     {
 
-        if(collision.impactForceSum.magnitude > 10.0f)
+        if(collision.relativeVelocity.magnitude > 10.0f)
         {
             Debug.Log(health.getHealth());
 
-            if (health.giveDamage(10))
+            if (health.giveDamage(10) && isAlive)
             {
-                // Dabar tai tik pritaikyta katapultai, bet kiekvienas unitas turetu tureti savo mirimo mechaminzma.
-                Debug.Log(health.getHealth());
-                foreach (Transform child in transform)
-                {
-                    child.gameObject.AddComponent<Rigidbody>();
-                    Debug.Log(child);
-                }
-                Destroy(transform.gameObject, 5);
+                isAlive = false;
+                br.StartCoroutine("BreakObject");
+                Debug.Log(gameObject.name + " - Dead");
             }
         }
 
