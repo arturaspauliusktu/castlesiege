@@ -9,6 +9,7 @@ TagManager:
   - buildableBox
   - Door
   - King
+  - Walkable_Surface
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Unit
   - 
   - 
   - 
