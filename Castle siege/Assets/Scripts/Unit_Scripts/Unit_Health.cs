@@ -25,6 +25,7 @@ public class Unit_Health {
     public Unit_Health(int maxUnitHealth)
     {
         this.maxUnitHealth = maxUnitHealth;
+        this.UnitHealth = maxUnitHealth;
     }
 
     public int getHealth() { return UnitHealth; }

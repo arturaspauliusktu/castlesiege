@@ -10,6 +10,8 @@ TagManager:
   - Door
   - King
   - Walkable_Surface
+  - Attacker
+  - Defender
   layers:
   - Default
   - TransparentFX
