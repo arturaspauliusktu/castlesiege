@@ -1374,7 +1374,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.929, y: 0.78800005, z: 0.864}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!1 &33419549
@@ -1890,7 +1890,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.86800003, y: 0.98, z: 1.0430001}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!1 &50173848
@@ -3690,7 +3690,7 @@ MonoBehaviour:
   FracturedObjectSource: {fileID: 877665605}
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
-  IsSupportChunk: 1
+  IsSupportChunk: 0
   IsNonSupportedChunk: 0
   IsDetachedChunk: 0
   RelativeVolume: 0.003514702
@@ -3822,7 +3822,7 @@ NavMeshObstacle:
   m_Extents: {x: 1.116, y: 0.57000005, z: 0.619}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!43 &125000648
@@ -4012,7 +4012,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4838330244652122, guid: d75e6768cecd3904b827e9594f700c57, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1538617789678256, guid: d75e6768cecd3904b827e9594f700c57, type: 2}
       propertyPath: m_IsActive
@@ -4021,6 +4021,11 @@ Prefab:
     - target: {fileID: 4057822978535334, guid: d75e6768cecd3904b827e9594f700c57, type: 2}
       propertyPath: m_LocalPosition.z
       value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114408688063333654, guid: d75e6768cecd3904b827e9594f700c57,
+        type: 2}
+      propertyPath: force
+      value: 60
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114567623003395182, guid: d75e6768cecd3904b827e9594f700c57, type: 2}
@@ -4196,6 +4201,143 @@ Transform:
   m_Father: {fileID: 877665604}
   m_RootOrder: 93
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &138649527
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 138649528}
+  - component: {fileID: 138649534}
+  - component: {fileID: 138649533}
+  - component: {fileID: 138649532}
+  - component: {fileID: 138649531}
+  - component: {fileID: 138649530}
+  - component: {fileID: 138649529}
+  m_Layer: 14
+  m_Name: Attacker_Fighter (3)
+  m_TagString: Attacker
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &138649528
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 138649527}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 744, y: 5, z: -20}
+  m_LocalScale: {x: 5, y: 10, z: 5}
+  m_Children: []
+  m_Father: {fileID: 1482304661}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &138649529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 138649527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c6f94312747c8409783e1a4a827dcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: e49b5ba3606a7bd4083e873f2fd2782f, type: 2}
+  state: 0
+  agent: {fileID: 0}
+--- !u!54 &138649530
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 138649527}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!195 &138649531
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 138649527}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 30
+  m_Acceleration: 15
+  avoidancePriority: 50
+  m_AngularSpeed: 180
+  m_StoppingDistance: 0.1
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!23 &138649532
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 138649527}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 4241db8a6921b434188ceb80793a4d23, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &138649533
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 138649527}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &138649534
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 138649527}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!43 &140030335
 Mesh:
   m_ObjectHideFlags: 0
@@ -5323,7 +5465,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &178380631
 GameObject:
@@ -5682,6 +5824,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 1c7fcf175a80e7d43ac61237c2469437, type: 2}
   state: 0
+  agent: {fileID: 0}
 --- !u!195 &183748689
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -5762,12 +5905,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 183748686}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -118.8, y: 5, z: -22.3}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -18.800003, y: 5, z: -22.3}
   m_LocalScale: {x: 5, y: 10, z: 5}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_Father: {fileID: 416751269}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &186114574
 GameObject:
@@ -7240,12 +7383,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 244751272}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -57.7, y: 6.8032074, z: -3.6}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -162.4, y: 0, z: 48.942406}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_Father: {fileID: 1361490920}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &251066478
 Mesh:
@@ -7756,7 +7899,7 @@ MonoBehaviour:
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
   IsSupportChunk: 0
-  IsNonSupportedChunk: 0
+  IsNonSupportedChunk: 1
   IsDetachedChunk: 0
   RelativeVolume: 0.0035022907
   Volume: 3.1403687
@@ -8644,7 +8787,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.65800005, y: 0.82800007, z: 0.772}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!1 &275679822
@@ -9478,7 +9621,7 @@ MonoBehaviour:
   FracturedObjectSource: {fileID: 877665605}
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
-  IsSupportChunk: 0
+  IsSupportChunk: 1
   IsNonSupportedChunk: 0
   IsDetachedChunk: 0
   RelativeVolume: 0.0076558767
@@ -9608,7 +9751,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.98200005, y: 0.94100004, z: 0.929}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!1 &324039909
@@ -10338,12 +10481,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 345743864}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 744, y: 5, z: 0}
   m_LocalScale: {x: 5, y: 10, z: 5}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_Father: {fileID: 1482304661}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &345743870
 MonoBehaviour:
@@ -10358,6 +10501,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: e49b5ba3606a7bd4083e873f2fd2782f, type: 2}
   state: 0
+  agent: {fileID: 0}
 --- !u!54 &345743871
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11036,7 +11180,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.947, y: 1.0120001, z: 0.86300004}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!1 &355944536
@@ -12760,7 +12904,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.697, y: 0.601, z: 0.85700005}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!43 &407667710
@@ -13231,6 +13375,38 @@ Transform:
   m_Father: {fileID: 877665604}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &416751268
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 416751269}
+  m_Layer: 0
+  m_Name: __Defenders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &416751269
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 416751268}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -100, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1121866007}
+  - {fileID: 685724306}
+  - {fileID: 183748693}
+  - {fileID: 1115678255}
+  m_Father: {fileID: 724923912}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &420814299
 GameObject:
   m_ObjectHideFlags: 0
@@ -13269,7 +13445,7 @@ MonoBehaviour:
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
   IsSupportChunk: 0
-  IsNonSupportedChunk: 0
+  IsNonSupportedChunk: 1
   IsDetachedChunk: 0
   RelativeVolume: 0.01145519
   Volume: 10.271427
@@ -13768,7 +13944,7 @@ MonoBehaviour:
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
   IsSupportChunk: 0
-  IsNonSupportedChunk: 0
+  IsNonSupportedChunk: 1
   IsDetachedChunk: 0
   RelativeVolume: 0.003590233
   Volume: 3.2192233
@@ -14392,7 +14568,7 @@ MonoBehaviour:
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
   IsSupportChunk: 0
-  IsNonSupportedChunk: 0
+  IsNonSupportedChunk: 1
   IsDetachedChunk: 0
   RelativeVolume: 0.0038520289
   Volume: 3.4539654
@@ -15673,7 +15849,7 @@ MonoBehaviour:
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
   IsSupportChunk: 0
-  IsNonSupportedChunk: 0
+  IsNonSupportedChunk: 1
   IsDetachedChunk: 0
   RelativeVolume: 0.0030670068
   Volume: 2.7500665
@@ -15806,7 +15982,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.63000005, y: 0.84000003, z: 0.65000004}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!1 &504333336
@@ -16494,7 +16670,7 @@ MonoBehaviour:
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
   IsSupportChunk: 0
-  IsNonSupportedChunk: 0
+  IsNonSupportedChunk: 1
   IsDetachedChunk: 0
   RelativeVolume: 0.004992487
   Volume: 4.47657
@@ -16971,7 +17147,7 @@ MonoBehaviour:
   FracturedObjectSource: {fileID: 877665605}
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
-  IsSupportChunk: 1
+  IsSupportChunk: 0
   IsNonSupportedChunk: 0
   IsDetachedChunk: 0
   RelativeVolume: 0.0049580527
@@ -17260,7 +17436,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.63100004, y: 0.994, z: 0.94500005}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!43 &567124119
@@ -17892,7 +18068,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.71500003, y: 0.88400006, z: 0.869}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!1 &608688398
@@ -17952,7 +18128,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: 6bad583ab9ce3984ba868a3685ea5ec0, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 0d9ddc5a849ec804b90ec9ddfec8a26c, type: 2}
 --- !u!43 &611747424
 Mesh:
   m_ObjectHideFlags: 0
@@ -20408,7 +20584,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.78400004, y: 0.91400003, z: 0.901}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!43 &681231552
@@ -20770,6 +20946,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 1c7fcf175a80e7d43ac61237c2469437, type: 2}
   state: 0
+  agent: {fileID: 0}
 --- !u!195 &685724302
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -20850,12 +21027,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 685724299}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -118.8, y: 5, z: 20.4}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -18.800003, y: 5, z: 20.4}
   m_LocalScale: {x: 5, y: 10, z: 5}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_Father: {fileID: 416751269}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &687338879
 Mesh:
@@ -22525,6 +22702,36 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
+--- !u!1 &724923911
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 724923912}
+  m_Layer: 0
+  m_Name: ====Units====
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &724923912
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 724923911}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 416751269}
+  - {fileID: 1482304661}
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &726391611
 GameObject:
   m_ObjectHideFlags: 0
@@ -22562,7 +22769,7 @@ MonoBehaviour:
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
   IsSupportChunk: 0
-  IsNonSupportedChunk: 0
+  IsNonSupportedChunk: 1
   IsDetachedChunk: 0
   RelativeVolume: 0.0037053283
   Volume: 3.322425
@@ -23039,7 +23246,7 @@ MonoBehaviour:
   FracturedObjectSource: {fileID: 877665605}
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
-  IsSupportChunk: 0
+  IsSupportChunk: 1
   IsNonSupportedChunk: 0
   IsDetachedChunk: 0
   RelativeVolume: 0.006711735
@@ -23796,7 +24003,7 @@ MonoBehaviour:
   FracturedObjectSource: {fileID: 877665605}
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
-  IsSupportChunk: 1
+  IsSupportChunk: 0
   IsNonSupportedChunk: 0
   IsDetachedChunk: 0
   RelativeVolume: 0.006242102
@@ -23932,7 +24139,7 @@ NavMeshObstacle:
   m_Extents: {x: 1.1240001, y: 0.95100003, z: 0.65400004}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!1 &773256934
@@ -24720,7 +24927,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.66400003, y: 0.86800003, z: 0.89500004}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!43 &793273775
@@ -25682,7 +25889,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.67600006, y: 1.011, z: 0.70400006}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!1 &815501145
@@ -25854,7 +26061,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.93500006, y: 0.975, z: 0.77000004}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!43 &824662785
@@ -26194,7 +26401,7 @@ MonoBehaviour:
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
   IsSupportChunk: 0
-  IsNonSupportedChunk: 0
+  IsNonSupportedChunk: 1
   IsDetachedChunk: 0
   RelativeVolume: 0.010698886
   Volume: 9.593278
@@ -28744,6 +28951,34 @@ MonoBehaviour:
   SingleMeshObject: {fileID: 1830139566}
   IsUsingSingleMeshObjectDraw: 1
   DecomposeRadius: 17.110384
+--- !u!1 &880951221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 880951222}
+  m_Layer: 0
+  m_Name: waypoint2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &880951222
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 880951221}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -338.2, y: 0, z: 48.942406}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1361490920}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &887279644
 GameObject:
   m_ObjectHideFlags: 0
@@ -28921,7 +29156,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.67, y: 1.103, z: 0.929}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!43 &890606747
@@ -29291,7 +29526,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4469633803057688, guid: 1db1929f8d222ad4698c7fcefee40d85, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 114204923778414054, guid: 1db1929f8d222ad4698c7fcefee40d85,
         type: 2}
@@ -29687,7 +29922,7 @@ MonoBehaviour:
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
   IsSupportChunk: 0
-  IsNonSupportedChunk: 0
+  IsNonSupportedChunk: 1
   IsDetachedChunk: 0
   RelativeVolume: 0.0026514828
   Volume: 2.3774822
@@ -29845,7 +30080,7 @@ MonoBehaviour:
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
   IsSupportChunk: 0
-  IsNonSupportedChunk: 0
+  IsNonSupportedChunk: 1
   IsDetachedChunk: 0
   RelativeVolume: 0.0077463803
   Volume: 6.94588
@@ -30839,7 +31074,7 @@ MonoBehaviour:
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
   IsSupportChunk: 0
-  IsNonSupportedChunk: 0
+  IsNonSupportedChunk: 1
   IsDetachedChunk: 0
   RelativeVolume: 0.0031258124
   Volume: 2.8027952
@@ -31275,7 +31510,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.726, y: 0.768, z: 0.697}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!1 &997378502
@@ -31453,7 +31688,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.98300004, y: 0.97, z: 0.989}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!43 &1001402386
@@ -31779,7 +32014,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.485, y: 1.0680001, z: 0.67800003}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!1 &1004617672
@@ -32439,7 +32674,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4776655951489990, guid: ed5d5ae5c810eed4fac275d0816ca61a, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114699118896639208, guid: ed5d5ae5c810eed4fac275d0816ca61a,
         type: 2}
@@ -33561,6 +33796,143 @@ Transform:
   m_Father: {fileID: 877665604}
   m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1064032612
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1064032613}
+  - component: {fileID: 1064032619}
+  - component: {fileID: 1064032618}
+  - component: {fileID: 1064032617}
+  - component: {fileID: 1064032616}
+  - component: {fileID: 1064032615}
+  - component: {fileID: 1064032614}
+  m_Layer: 14
+  m_Name: Attacker_Fighter (4)
+  m_TagString: Attacker
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1064032613
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1064032612}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 744, y: 5, z: -39.9}
+  m_LocalScale: {x: 5, y: 10, z: 5}
+  m_Children: []
+  m_Father: {fileID: 1482304661}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1064032614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1064032612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c6f94312747c8409783e1a4a827dcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: e49b5ba3606a7bd4083e873f2fd2782f, type: 2}
+  state: 0
+  agent: {fileID: 0}
+--- !u!54 &1064032615
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1064032612}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!195 &1064032616
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1064032612}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 30
+  m_Acceleration: 15
+  avoidancePriority: 50
+  m_AngularSpeed: 180
+  m_StoppingDistance: 0.1
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!23 &1064032617
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1064032612}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 4241db8a6921b434188ceb80793a4d23, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &1064032618
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1064032612}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1064032619
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1064032612}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1065513962
 GameObject:
   m_ObjectHideFlags: 0
@@ -34208,7 +34580,7 @@ MonoBehaviour:
   FracturedObjectSource: {fileID: 877665605}
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
-  IsSupportChunk: 0
+  IsSupportChunk: 1
   IsNonSupportedChunk: 0
   IsDetachedChunk: 0
   RelativeVolume: 0.0060948045
@@ -34336,7 +34708,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.79, y: 0.88900006, z: 0.97300005}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!1 &1097751705
@@ -34526,7 +34898,7 @@ MonoBehaviour:
   FracturedObjectSource: {fileID: 877665605}
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
-  IsSupportChunk: 1
+  IsSupportChunk: 0
   IsNonSupportedChunk: 0
   IsDetachedChunk: 0
   RelativeVolume: 0.006798442
@@ -34662,7 +35034,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.864, y: 0.91200006, z: 0.966}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!1 &1099435192
@@ -35039,12 +35411,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1115678251}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -251.4, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -151.4, y: 0, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_Father: {fileID: 416751269}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1115678256
 MonoBehaviour:
@@ -35057,8 +35429,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c6f94312747c8409783e1a4a827dcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 0}
+  stats: {fileID: 11400000, guid: 4db13a6daaffc0a4180f0dcc7323b5ec, type: 2}
   state: 0
+  agent: {fileID: 0}
 --- !u!1 &1121866000
 GameObject:
   m_ObjectHideFlags: 0
@@ -35108,6 +35481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 1c7fcf175a80e7d43ac61237c2469437, type: 2}
   state: 0
+  agent: {fileID: 0}
 --- !u!195 &1121866003
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -35188,12 +35562,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1121866000}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -118.8, y: 5, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -18.800003, y: 5, z: 0}
   m_LocalScale: {x: 5, y: 10, z: 5}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_Father: {fileID: 416751269}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1122832697
 Mesh:
@@ -37067,7 +37441,7 @@ Transform:
   - {fileID: 877665604}
   - {fileID: 902174532}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1163629243
 Rigidbody:
@@ -37719,7 +38093,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.9760001, y: 0.83800006, z: 1.167}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!1 &1184433610
@@ -37759,7 +38133,7 @@ MonoBehaviour:
   FracturedObjectSource: {fileID: 877665605}
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
-  IsSupportChunk: 1
+  IsSupportChunk: 0
   IsNonSupportedChunk: 0
   IsDetachedChunk: 0
   RelativeVolume: 0.003189816
@@ -37891,7 +38265,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.693, y: 0.703, z: 0.734}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!1 &1191814214
@@ -40503,7 +40877,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.75600004, y: 0.80600005, z: 0.95100003}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!43 &1278945456
@@ -41145,7 +41519,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.61600006, y: 1.014, z: 0.81000006}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!1 &1306835514
@@ -41317,7 +41691,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.76500005, y: 1.028, z: 0.69100004}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!1 &1317938771
@@ -41795,7 +42169,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.96800005, y: 1.172, z: 0.75200003}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!43 &1348775831
@@ -42147,7 +42521,7 @@ MonoBehaviour:
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
   IsSupportChunk: 0
-  IsNonSupportedChunk: 0
+  IsNonSupportedChunk: 1
   IsDetachedChunk: 0
   RelativeVolume: 0.005491761
   Volume: 4.92425
@@ -42275,6 +42649,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 877665604}
   m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1361490919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1361490920}
+  m_Layer: 0
+  m_Name: ==Waypoints==
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1361490920
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1361490919}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 266.63394, y: 0, z: -52.542404}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1374358968}
+  - {fileID: 244751273}
+  - {fileID: 880951222}
+  - {fileID: 1666464064}
+  - {fileID: 1443977164}
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1366317305
 Mesh:
@@ -42625,20 +43032,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 049ca145a95d0154884daed1bf79992b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stage: 0
   waypoint1: {fileID: 244751272}
-  waypoint2: {fileID: 244751272}
+  waypoint2: {fileID: 880951221}
+  waypoint3: {fileID: 1666464063}
+  waypoint4: {fileID: 1443977163}
 --- !u!4 &1374358968
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1374358966}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 266.63394, y: 59.65898, z: -52.542404}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 1361490920}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1375141044
 GameObject:
@@ -42676,7 +43086,7 @@ MonoBehaviour:
   FracturedObjectSource: {fileID: 877665605}
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
-  IsSupportChunk: 1
+  IsSupportChunk: 0
   IsNonSupportedChunk: 0
   IsDetachedChunk: 0
   RelativeVolume: 0.0037891536
@@ -43124,6 +43534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 0}
   state: 0
+  agent: {fileID: 0}
 --- !u!43 &1385872572
 Mesh:
   m_ObjectHideFlags: 0
@@ -44681,7 +45092,7 @@ MonoBehaviour:
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
   IsSupportChunk: 0
-  IsNonSupportedChunk: 0
+  IsNonSupportedChunk: 1
   IsDetachedChunk: 0
   RelativeVolume: 0.0048781675
   Volume: 4.3740644
@@ -44970,6 +45381,34 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
+--- !u!1 &1443977163
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1443977164}
+  m_Layer: 0
+  m_Name: waypoint4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1443977164
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1443977163}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -502.8, y: 0, z: 53}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1361490920}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1446378657
 Mesh:
   m_ObjectHideFlags: 0
@@ -45631,7 +46070,7 @@ MonoBehaviour:
   FracturedObjectSource: {fileID: 877665605}
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
-  IsSupportChunk: 1
+  IsSupportChunk: 0
   IsNonSupportedChunk: 0
   IsDetachedChunk: 0
   RelativeVolume: 0.004294277
@@ -45767,7 +46206,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.642, y: 0.90300006, z: 0.83000004}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!1 &1478889684
@@ -45929,6 +46368,39 @@ Transform:
   m_Children: []
   m_Father: {fileID: 877665604}
   m_RootOrder: 113
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1482304660
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1482304661}
+  m_Layer: 0
+  m_Name: __Attackers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1482304661
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1482304660}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 345743869}
+  - {fileID: 1681880687}
+  - {fileID: 2076318649}
+  - {fileID: 138649528}
+  - {fileID: 1064032613}
+  m_Father: {fileID: 724923912}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1483598550
 GameObject:
@@ -47938,7 +48410,7 @@ MonoBehaviour:
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
   IsSupportChunk: 0
-  IsNonSupportedChunk: 0
+  IsNonSupportedChunk: 1
   IsDetachedChunk: 0
   RelativeVolume: 0.004083687
   Volume: 3.6616843
@@ -48079,7 +48551,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.97400004, y: 0.68100005, z: 0.69000006}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!43 &1571567843
@@ -48543,7 +49015,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.93700004, y: 1.0170001, z: 0.86500007}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!1 &1581882247
@@ -49189,7 +49661,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 9f516970ad8408846a941eb61b7b932f, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 9f516970ad8408846a941eb61b7b932f, type: 3}
       propertyPath: m_Name
@@ -49725,7 +50197,7 @@ MonoBehaviour:
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
   IsSupportChunk: 0
-  IsNonSupportedChunk: 1
+  IsNonSupportedChunk: 0
   IsDetachedChunk: 0
   RelativeVolume: 0.0011783595
   Volume: 1.0565895
@@ -50483,7 +50955,7 @@ MonoBehaviour:
   FracturedObjectSource: {fileID: 877665605}
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
-  IsSupportChunk: 0
+  IsSupportChunk: 1
   IsNonSupportedChunk: 0
   IsDetachedChunk: 0
   RelativeVolume: 0.001635037
@@ -50613,7 +51085,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.54700005, y: 0.721, z: 0.46500003}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!43 &1665441299
@@ -50766,6 +51238,34 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
+--- !u!1 &1666464063
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1666464064}
+  m_Layer: 0
+  m_Name: waypoint3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1666464064
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1666464063}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -421.1, y: 0, z: 48.942406}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1361490920}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1675233000
 Mesh:
   m_ObjectHideFlags: 0
@@ -51066,6 +51566,143 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
+--- !u!1 &1681880680
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1681880687}
+  - component: {fileID: 1681880686}
+  - component: {fileID: 1681880685}
+  - component: {fileID: 1681880684}
+  - component: {fileID: 1681880683}
+  - component: {fileID: 1681880682}
+  - component: {fileID: 1681880681}
+  m_Layer: 14
+  m_Name: Attacker_Fighter (1)
+  m_TagString: Attacker
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1681880681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1681880680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c6f94312747c8409783e1a4a827dcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: e49b5ba3606a7bd4083e873f2fd2782f, type: 2}
+  state: 0
+  agent: {fileID: 0}
+--- !u!54 &1681880682
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1681880680}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!195 &1681880683
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1681880680}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 30
+  m_Acceleration: 15
+  avoidancePriority: 50
+  m_AngularSpeed: 180
+  m_StoppingDistance: 0.1
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!23 &1681880684
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1681880680}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 4241db8a6921b434188ceb80793a4d23, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &1681880685
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1681880680}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1681880686
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1681880680}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1681880687
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1681880680}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 744, y: 5, z: 16.5}
+  m_LocalScale: {x: 5, y: 10, z: 5}
+  m_Children: []
+  m_Father: {fileID: 1482304661}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1682884883
 GameObject:
   m_ObjectHideFlags: 0
@@ -51103,7 +51740,7 @@ MonoBehaviour:
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
   IsSupportChunk: 0
-  IsNonSupportedChunk: 0
+  IsNonSupportedChunk: 1
   IsDetachedChunk: 0
   RelativeVolume: 0.0024942858
   Volume: 2.2365298
@@ -52016,7 +52653,7 @@ MonoBehaviour:
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
   IsSupportChunk: 0
-  IsNonSupportedChunk: 0
+  IsNonSupportedChunk: 1
   IsDetachedChunk: 0
   RelativeVolume: 0.0069497526
   Volume: 6.2315745
@@ -52145,7 +52782,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.78200006, y: 0.88500005, z: 1.125}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!43 &1705557686
@@ -54333,7 +54970,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.73800004, y: 0.96300006, z: 1.118}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!1001 &1776568013
@@ -54381,7 +55018,7 @@ Prefab:
     - target: {fileID: 224905335708623742, guid: 82eb46b519a20d8409f4217af30a7e04,
         type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 224905335708623742, guid: 82eb46b519a20d8409f4217af30a7e04,
         type: 2}
@@ -54929,7 +55566,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.62100005, y: 0.809, z: 0.96300006}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!1 &1791198468
@@ -55427,7 +56064,7 @@ NavMeshObstacle:
   m_Extents: {x: 1.0940001, y: 0.78200006, z: 0.78900003}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!43 &1804178282
@@ -55591,6 +56228,7 @@ GameObject:
   - component: {fileID: 1810077333}
   - component: {fileID: 1810077331}
   - component: {fileID: 1810077332}
+  - component: {fileID: 1810077335}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Walkable_Surface
@@ -55657,13 +56295,28 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1810077330}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 475, y: -0.5, z: 0}
   m_LocalScale: {x: 1623.31, y: 1, z: 245.4}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 1990582408}
+  m_RootOrder: 268
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1810077335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1810077330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1825192739
 GameObject:
   m_ObjectHideFlags: 0
@@ -55831,7 +56484,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.845, y: 0.98600006, z: 0.671}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!43 &1827009381
@@ -56428,7 +57081,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.753, y: 0.68200004, z: 0.855}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!43 &1841741480
@@ -56912,7 +57565,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.79700005, y: 1.13, z: 0.689}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!1 &1856552933
@@ -56951,7 +57604,7 @@ MonoBehaviour:
   FracturedObjectSource: {fileID: 877665605}
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
-  IsSupportChunk: 0
+  IsSupportChunk: 1
   IsNonSupportedChunk: 0
   IsDetachedChunk: 0
   RelativeVolume: 0.004633864
@@ -58254,7 +58907,7 @@ MonoBehaviour:
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
   IsSupportChunk: 0
-  IsNonSupportedChunk: 0
+  IsNonSupportedChunk: 1
   IsDetachedChunk: 0
   RelativeVolume: 0.0025823107
   Volume: 2.3154583
@@ -59140,7 +59793,7 @@ NavMeshObstacle:
   m_Extents: {x: 1.003, y: 0.90800005, z: 1.044}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!1 &1941353638
@@ -59180,7 +59833,7 @@ MonoBehaviour:
   FracturedObjectSource: {fileID: 877665605}
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
-  IsSupportChunk: 1
+  IsSupportChunk: 0
   IsNonSupportedChunk: 0
   IsDetachedChunk: 0
   RelativeVolume: 0.002023838
@@ -59318,7 +59971,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.66800004, y: 0.526, z: 0.646}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!43 &1943151075
@@ -59508,7 +60161,7 @@ MonoBehaviour:
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
   IsSupportChunk: 0
-  IsNonSupportedChunk: 0
+  IsNonSupportedChunk: 1
   IsDetachedChunk: 0
   RelativeVolume: 0.0061758095
   Volume: 5.53761
@@ -59824,7 +60477,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.72200006, y: 1.217, z: 0.675}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!1 &1952112054 stripped
@@ -60792,7 +61445,7 @@ MonoBehaviour:
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
   IsSupportChunk: 0
-  IsNonSupportedChunk: 0
+  IsNonSupportedChunk: 1
   IsDetachedChunk: 0
   RelativeVolume: 0.0008785781
   Volume: 0.7877871
@@ -60950,7 +61603,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4055161532507968, guid: 98585f54af84eea42888b1eb976cc6a7, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1109403741973358, guid: 98585f54af84eea42888b1eb976cc6a7, type: 2}
       propertyPath: m_TagString
@@ -60959,6 +61612,31 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 98585f54af84eea42888b1eb976cc6a7, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1990582406 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1641457906094142, guid: 98585f54af84eea42888b1eb976cc6a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1990582405}
+--- !u!114 &1990582407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1990582406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
+--- !u!4 &1990582408 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4055161532507968, guid: 98585f54af84eea42888b1eb976cc6a7,
+    type: 2}
+  m_PrefabInternal: {fileID: 1990582405}
 --- !u!1 &1991360283
 GameObject:
   m_ObjectHideFlags: 0
@@ -61766,7 +62444,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.49, y: 0.735, z: 0.63600004}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!43 &2021474275
@@ -62390,7 +63068,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.62200004, y: 0.90800005, z: 0.79700005}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!1 &2039933691
@@ -62734,8 +63412,8 @@ MonoBehaviour:
   FracturedObjectSource: {fileID: 877665605}
   SplitSubMeshIndex: 2
   DontDeleteAfterBroken: 0
-  IsSupportChunk: 1
-  IsNonSupportedChunk: 0
+  IsSupportChunk: 0
+  IsNonSupportedChunk: 1
   IsDetachedChunk: 0
   RelativeVolume: 0.0020879856
   Volume: 1.8722161
@@ -62860,7 +63538,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.48200002, y: 0.67800003, z: 0.71500003}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!43 &2057218168
@@ -63344,9 +64022,146 @@ NavMeshObstacle:
   m_Extents: {x: 0.92200005, y: 0.83500004, z: 1.057}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!1 &2076318642
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2076318649}
+  - component: {fileID: 2076318648}
+  - component: {fileID: 2076318647}
+  - component: {fileID: 2076318646}
+  - component: {fileID: 2076318645}
+  - component: {fileID: 2076318644}
+  - component: {fileID: 2076318643}
+  m_Layer: 14
+  m_Name: Attacker_Fighter (2)
+  m_TagString: Attacker
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2076318643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2076318642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c6f94312747c8409783e1a4a827dcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: e49b5ba3606a7bd4083e873f2fd2782f, type: 2}
+  state: 0
+  agent: {fileID: 0}
+--- !u!54 &2076318644
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2076318642}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!195 &2076318645
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2076318642}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 30
+  m_Acceleration: 15
+  avoidancePriority: 50
+  m_AngularSpeed: 180
+  m_StoppingDistance: 0.1
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!23 &2076318646
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2076318642}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 4241db8a6921b434188ceb80793a4d23, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!65 &2076318647
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2076318642}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &2076318648
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2076318642}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &2076318649
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2076318642}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 744, y: 5, z: 31.4}
+  m_LocalScale: {x: 5, y: 10, z: 5}
+  m_Children: []
+  m_Father: {fileID: 1482304661}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &2076919539
 Mesh:
   m_ObjectHideFlags: 0
@@ -64188,7 +65003,7 @@ Transform:
   m_Children:
   - {fileID: 1887487403}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 32.3, y: 0, z: 0}
 --- !u!114 &2115675525
 MonoBehaviour:
@@ -65368,7 +66183,7 @@ NavMeshObstacle:
   m_Extents: {x: 0.919, y: 0.74500006, z: 0.67300004}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
 --- !u!1 &2126719580 stripped
@@ -65414,8 +66229,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c6f94312747c8409783e1a4a827dcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: 1c7fcf175a80e7d43ac61237c2469437, type: 2}
+  stats: {fileID: 11400000, guid: 8ee81f39ca7fb3248918b01fac977902, type: 2}
   state: 0
+  agent: {fileID: 0}
+--- !u!114 &2126719587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2126719580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_IgnoreFromBuild: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &2138131467
 GameObject:
   m_ObjectHideFlags: 0
@@ -65583,6 +66414,6 @@ NavMeshObstacle:
   m_Extents: {x: 0.9480001, y: 0.665, z: 0.72900003}
   m_MoveThreshold: 0.1
   m_Carve: 1
-  m_CarveOnlyStationary: 1
+  m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5

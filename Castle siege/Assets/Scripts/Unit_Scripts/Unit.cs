@@ -25,7 +25,7 @@ public class Unit : MonoBehaviour {
     protected Unit target;
     protected Unit[] enemies;
 
-    protected NavMeshAgent agent;
+    public NavMeshAgent agent;
     protected Unit_Health health;
     protected Break br;
     protected bool isReady = false;
@@ -70,14 +70,14 @@ public class Unit : MonoBehaviour {
         switch (state)
         {
             case UnitState.MovingToSpotIdle:
-                if (agent.remainingDistance < agent.stoppingDistance + .1f)
+                if (agent.remainingDistance < agent.stoppingDistance + 20f)
                 {
                     Stop();
                 }
                 break;
 
             case UnitState.MovingToSpotGuard:
-                if (agent.remainingDistance < agent.stoppingDistance + .1f)
+                if (agent.remainingDistance < agent.stoppingDistance + 20f)
                 {
                     Guard();
                 }
@@ -131,6 +131,15 @@ public class Unit : MonoBehaviour {
                 break;
         }
 
+    }
+
+    public bool ifPathEexists(Vector3 location)
+    {
+        NavMeshPath path = new NavMeshPath();
+        agent.CalculatePath(location, path);
+        if (path.status == NavMeshPathStatus.PathComplete)
+            return true;
+        return false;
     }
 
     public void ExecuteCommand(AICommand c)
@@ -340,6 +349,9 @@ public class Unit : MonoBehaviour {
         gameObject.layer = 0;
 
         Destroy(agent);
+        Destroy(gameObject.GetComponent<MeshFilter>());
+        Destroy(gameObject.GetComponent<BoxCollider>());
+        Destroy(gameObject.GetComponent<Rigidbody>());
     }
 
     /// <summary>
