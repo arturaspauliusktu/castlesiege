@@ -74,7 +74,7 @@ public class Commands : MonoBehaviour {
                 Count = 0;
                 break;
             case Objective.s2:
-                if (Count <= A_Units.Length * 10)
+                if (Count <= A_Units.Length)
                 {
                     foreach (Unit unit in A_Units)
                     {
@@ -87,10 +87,12 @@ public class Commands : MonoBehaviour {
                     Count++;
                 }
 
+                
                 foreach (Unit unit in A_Units)
                 {
-                    if(unit.agent.remainingDistance >= 40f)
-                        unit.ExecuteCommand(new AICommand(AICommand.CommandType.GoToAndGuard, waypoint2.transform.position));
+                    if(unit.state != Unit.UnitState.Dead)
+                        if(unit.agent.remainingDistance >= 60f)
+                            unit.ExecuteCommand(new AICommand(AICommand.CommandType.GoToAndGuard, waypoint2.transform.position));
                 }
 
 
@@ -118,8 +120,9 @@ public class Commands : MonoBehaviour {
 
                 foreach (Unit unit in A_Units)
                 {
-                    if (unit.state != Unit.UnitState.Guarding)
-                        return;
+                    if (unit.state != Unit.UnitState.Dead)
+                        if (unit.state != Unit.UnitState.Guarding)
+                            return;
                        
                 }
 
@@ -147,8 +150,9 @@ public class Commands : MonoBehaviour {
 
                 foreach (Unit unit in A_Units)
                 {
-                    if (unit.state != Unit.UnitState.Guarding)
-                        return;
+                    if (unit.state != Unit.UnitState.Dead)
+                        if (unit.state != Unit.UnitState.Guarding)
+                            return;
 
                 }
 
