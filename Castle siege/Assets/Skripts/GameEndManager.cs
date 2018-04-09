@@ -7,17 +7,17 @@ public class GameEndManager : MonoBehaviour {
     public float restarDelay = 5;
     Animator anim;
     float timer;
-    GameObject door;
+    GameObject king;
 
 	// Use this for initialization
 	void Start () {
         anim = GetComponent<Animator>();
-        door = GameObject.FindGameObjectsWithTag("Door")[0];
+        king = GameObject.FindGameObjectWithTag("King");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (door.GetComponent<Unit>().UnitHealth < 100)
+        if (king.GetComponent<Unit>().stats.health <= 0)
         {
             anim.SetTrigger("GameEnd");
 

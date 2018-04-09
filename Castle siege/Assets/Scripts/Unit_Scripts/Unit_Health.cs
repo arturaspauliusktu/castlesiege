@@ -25,11 +25,21 @@ public class Unit_Health {
     public Unit_Health(int maxUnitHealth)
     {
         this.maxUnitHealth = maxUnitHealth;
+        this.UnitHealth = maxUnitHealth;
     }
 
     public int getHealth() { return UnitHealth; }
 
-    public void setHealth(int health) { UnitHealth = health; }
+    public void setHealth(int health) {
+        if(health > maxUnitHealth)
+        {
+            UnitHealth = maxUnitHealth;
+        }
+        else
+        {
+            UnitHealth = health;
+        }
+    }
 
     /// <summary>
     /// Duoda unitams nustatyta damage.
@@ -40,7 +50,10 @@ public class Unit_Health {
     {
         UnitHealth -= dmg;
         if (UnitHealth <= 0)
+        {
+            UnitHealth = 0;
             return true;
+        }
         return false;
     }
 
