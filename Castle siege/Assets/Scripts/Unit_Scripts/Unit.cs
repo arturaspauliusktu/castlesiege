@@ -9,6 +9,7 @@ public class Unit : MonoBehaviour {
 
     public UnitStats stats;
     public UnitState state = UnitState.Idle;
+    public Animator animator;
 
     public enum UnitState
     {
@@ -40,6 +41,7 @@ public class Unit : MonoBehaviour {
     // Use this for initialization
     void Start () {
         stats = Instantiate<UnitStats>(stats);
+        animator = GetComponent<Animator>();
     }
 
     //Gauna damage jei uzkrenta ant unito kazkas.
@@ -108,12 +110,10 @@ public class Unit : MonoBehaviour {
             case UnitState.Guarding:
                 if (Time.time > lastGuardCheckTime + guardCheckInterval)
                 {
-                    
                     lastGuardCheckTime = Time.time;
                     Unit t = GetNearestHostileUnit();
                     if (t != null)
                     {
-                        Debug.Log(gameObject + " Moves to attack");
                         MoveToAttack(t);
                     }
                 }
@@ -179,6 +179,7 @@ public class Unit : MonoBehaviour {
     //move to a position and be idle
     private void GoToAndIdle(Vector3 location)
     {
+        animator.SetBool("Moving", true);
         state = UnitState.MovingToSpotIdle;
         target = null;
         isReady = false;
@@ -190,6 +191,7 @@ public class Unit : MonoBehaviour {
     //move to a position and be guarding
     private void GoToAndGuard(Vector3 location)
     {
+        animator.SetBool("Moving", true);
         state = UnitState.MovingToSpotGuard;
         target = null;
         isReady = false;
@@ -201,6 +203,7 @@ public class Unit : MonoBehaviour {
     //stop and stay Idle
     private void Stop()
     {
+        animator.SetBool("Moving", false);
         state = UnitState.Idle;
         target = null;
         isReady = false;
@@ -212,6 +215,7 @@ public class Unit : MonoBehaviour {
     //stop but watch for enemies nearby
     public void Guard()
     {
+        animator.SetBool("Moving", false);
         state = UnitState.Guarding;
         target = null;
         isReady = false;
@@ -223,8 +227,9 @@ public class Unit : MonoBehaviour {
     //move towards a target to attack it
     private void MoveToAttack(Unit target)
     {
-        if (!IsDeadOrNull(target))  
+        if (!IsDeadOrNull(target))
         {
+            animator.SetBool("Moving", true);
             state = UnitState.MovingToTarget;
             this.target = target;
             isReady = false;
@@ -234,6 +239,7 @@ public class Unit : MonoBehaviour {
         }
         else
         {
+            animator.SetBool("Moving", false);
             //if the command is dealt by a Timeline, the target might be already dead
             Guard();
         }
@@ -259,10 +265,13 @@ public class Unit : MonoBehaviour {
     //the single blows
     private IEnumerator DealAttack()
     {
+        animator.SetTrigger("Attack1Trigger");
         while (target != null)
         {
+            
             //Kautyniu animacija
             target.SufferAttack(stats.attackPower);
+            animator.SetBool("Moving", false);
 
             yield return new WaitForSeconds(2f / stats.attackSpeed);
 
@@ -309,6 +318,7 @@ public class Unit : MonoBehaviour {
         {
             stats.health = 0;
             UnitDie();
+            animator.SetBool("Moving", false);
         }
     }
 
@@ -350,6 +360,7 @@ public class Unit : MonoBehaviour {
         gameObject.tag = "Untagged"; //Kad kiti agentai nepultu lavono.
         gameObject.layer = 0;
 
+        gameObject.SetActive(false);
         Destroy(agent);
         Destroy(gameObject.GetComponent<MeshFilter>());
         Destroy(gameObject.GetComponent<BoxCollider>());
