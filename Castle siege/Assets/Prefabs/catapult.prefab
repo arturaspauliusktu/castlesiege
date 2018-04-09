@@ -346,7 +346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4838330244652122}
   m_Layer: 0
-  m_Name: Catapult
+  m_Name: catapult
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2341,8 +2341,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c6f94312747c8409783e1a4a827dcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxUnitHealth: 100
-  UnitHealth: 100
+  stats: {fileID: 0}
+  state: 0
+  agent: {fileID: 0}
 --- !u!135 &135102948393631326
 SphereCollider:
   m_ObjectHideFlags: 1
