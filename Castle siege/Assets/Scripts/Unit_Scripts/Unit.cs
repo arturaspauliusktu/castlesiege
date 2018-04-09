@@ -108,10 +108,12 @@ public class Unit : MonoBehaviour {
             case UnitState.Guarding:
                 if (Time.time > lastGuardCheckTime + guardCheckInterval)
                 {
+                    
                     lastGuardCheckTime = Time.time;
                     Unit t = GetNearestHostileUnit();
                     if (t != null)
                     {
+                        Debug.Log(gameObject + " Moves to attack");
                         MoveToAttack(t);
                     }
                 }
@@ -221,7 +223,7 @@ public class Unit : MonoBehaviour {
     //move towards a target to attack it
     private void MoveToAttack(Unit target)
     {
-        if (!IsDeadOrNull(target))
+        if (!IsDeadOrNull(target))  
         {
             state = UnitState.MovingToTarget;
             this.target = target;

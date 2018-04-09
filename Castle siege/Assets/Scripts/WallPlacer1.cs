@@ -57,7 +57,8 @@ public class WallPlacer1 : MonoBehaviour
     {
         grid = FindObjectOfType<Grid>();
         buildable = new GameObject("Warior");
-        buildable = Instantiate(WariorQueue.transform.GetChild(0).gameObject as GameObject);
+        //buildable = Instantiate(WariorQueue.transform.GetChild(0).gameObject as GameObject);
+        buildable = Instantiate(WariorQueue);
         buildableBox = GameObject.CreatePrimitive(PrimitiveType.Cube);
         buildableBox.GetComponent<Collider>().isTrigger = true;
         buildableBox.transform.localScale = buildable.GetComponent<Collider>().bounds.size;
