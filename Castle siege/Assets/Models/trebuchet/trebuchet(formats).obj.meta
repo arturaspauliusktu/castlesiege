@@ -1,0 +1,161 @@
+fileFormatVersion: 2
+guid: bf9bd713da1deb64294607e2e0ca6132
+timeCreated: 1523971550
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: TREBUCHET_1_agirlik
+    100004: TREBUCHET_1_ayak1
+    100006: TREBUCHET_1_ayak2
+    100008: TREBUCHET_1_direkler1
+    100010: TREBUCHET_1_dirsek
+    100012: TREBUCHET_1_gulle
+    100014: TREBUCHET_1_ipler
+    100016: TREBUCHET_1_kizak
+    100018: TREBUCHET_1_kol
+    100020: TREBUCHET_1_kumaslar
+    100022: TREBUCHET_1_mekanizma
+    100024: TREBUCHET_1_torba
+    400000: //RootNode
+    400002: TREBUCHET_1_agirlik
+    400004: TREBUCHET_1_ayak1
+    400006: TREBUCHET_1_ayak2
+    400008: TREBUCHET_1_direkler1
+    400010: TREBUCHET_1_dirsek
+    400012: TREBUCHET_1_gulle
+    400014: TREBUCHET_1_ipler
+    400016: TREBUCHET_1_kizak
+    400018: TREBUCHET_1_kol
+    400020: TREBUCHET_1_kumaslar
+    400022: TREBUCHET_1_mekanizma
+    400024: TREBUCHET_1_torba
+    2100000: TREBUCHET_1_agirlikMat
+    2100002: TREBUCHET_1_ayak1Mat
+    2100004: TREBUCHET_1_ayak2Mat
+    2100006: TREBUCHET_1_direkler1Mat
+    2100008: TREBUCHET_1_dirsekMat
+    2100010: TREBUCHET_1_gulleMat
+    2100012: TREBUCHET_1_iplerMat
+    2100014: TREBUCHET_1_kizakMat
+    2100016: TREBUCHET_1_kolMat
+    2100018: TREBUCHET_1_kumaslarMat
+    2100020: TREBUCHET_1_mekanizmaMat
+    2100022: TREBUCHET_1_torbaMat
+    2300000: TREBUCHET_1_agirlik
+    2300002: TREBUCHET_1_ayak1
+    2300004: TREBUCHET_1_ayak2
+    2300006: TREBUCHET_1_direkler1
+    2300008: TREBUCHET_1_dirsek
+    2300010: TREBUCHET_1_gulle
+    2300012: TREBUCHET_1_ipler
+    2300014: TREBUCHET_1_kizak
+    2300016: TREBUCHET_1_kol
+    2300018: TREBUCHET_1_kumaslar
+    2300020: TREBUCHET_1_mekanizma
+    2300022: TREBUCHET_1_torba
+    3300000: TREBUCHET_1_agirlik
+    3300002: TREBUCHET_1_ayak1
+    3300004: TREBUCHET_1_ayak2
+    3300006: TREBUCHET_1_direkler1
+    3300008: TREBUCHET_1_dirsek
+    3300010: TREBUCHET_1_gulle
+    3300012: TREBUCHET_1_ipler
+    3300014: TREBUCHET_1_kizak
+    3300016: TREBUCHET_1_kol
+    3300018: TREBUCHET_1_kumaslar
+    3300020: TREBUCHET_1_mekanizma
+    3300022: TREBUCHET_1_torba
+    4300000: TREBUCHET_1_agirlik
+    4300002: TREBUCHET_1_ayak1
+    4300004: TREBUCHET_1_ayak2
+    4300006: TREBUCHET_1_direkler1
+    4300008: TREBUCHET_1_dirsek
+    4300010: TREBUCHET_1_gulle
+    4300012: TREBUCHET_1_ipler
+    4300014: TREBUCHET_1_kizak
+    4300016: TREBUCHET_1_kol
+    4300018: TREBUCHET_1_kumaslar
+    4300020: TREBUCHET_1_mekanizma
+    4300022: TREBUCHET_1_torba
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
