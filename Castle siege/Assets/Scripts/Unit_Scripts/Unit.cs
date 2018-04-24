@@ -373,7 +373,7 @@ public class Unit : MonoBehaviour {
     /// </summary>
     /// <param name="u">unitas</param>
     /// <returns>grazina true arba false</returns>
-    private bool IsDeadOrNull(Unit u)
+    public static bool IsDeadOrNull(Unit u)
     {
         return (u == null || u.state == UnitState.Dead);
     }

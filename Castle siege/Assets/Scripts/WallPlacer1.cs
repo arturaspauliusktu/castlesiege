@@ -6,7 +6,8 @@ public class WallPlacer1 : MonoBehaviour
 {
     public GameObject wallMesh;
     public GameObject wall;
-    public GameObject WariorQueue; 
+    public GameObject WariorQueue;
+    public GameObject Trap;
 
     private Grid grid;
     private GameObject buildable;
@@ -73,13 +74,30 @@ public class WallPlacer1 : MonoBehaviour
         isBuildableWall = false;
     }
 
+    void enableTrapBuild()
+    {
+        grid = FindObjectOfType<Grid>();
+        buildable = new GameObject("Trap");
+        buildable = Instantiate(Trap);
+        buildableBox = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        buildableBox.GetComponent<Collider>().isTrigger = true;
+        buildableBox.transform.localScale = buildable.transform.GetChild(0).GetComponent<Collider>().bounds.size;
+
+        Material buildMaterial = Resources.Load("Materials/BuildMaterials/BuildAlowed", typeof(Material)) as Material;
+        buildableBox.GetComponent<Renderer>().material = buildMaterial;
+        buildableBox.tag = "buildableBox";
+
+        Renderer rend = buildableBox.GetComponent<Renderer>();
+        rend.enabled = true;
+        isBuildEnabled = true;
+        isBuildableWall = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(isBuildEnabled);
         if (isBuildEnabled)
         {
-            Debug.Log("war");
             Ray pendingBuildSpot = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit pendingInfo;
             Physics.Raycast(pendingBuildSpot, out pendingInfo);
@@ -132,11 +150,22 @@ public class WallPlacer1 : MonoBehaviour
                 disableBuild();
             }
         }
+
+        if (Input.GetKeyDown("t"))
+        {
+            if (!isBuildEnabled)
+            {
+                enableTrapBuild();
+            }
+            else
+            {
+                disableBuild();
+            }
+        }
     }
 
     private void placeBuildingNear(Vector3 clickPoint)
     {
-        Debug.Log(buildableBox.GetComponent<Renderer>().material.color.r == 0.2512111f);
         if (buildableBox.GetComponent<Renderer>().material.color.r == 0.2512111f)
         {
             var finalPosition = buildable.transform.position;
