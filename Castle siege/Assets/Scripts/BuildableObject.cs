@@ -31,25 +31,20 @@ public class BuildableObject : MonoBehaviour {
 
     void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("ENTER");
         Material buildDenied = Resources.Load("Materials/BuildMaterials/BuildDenied", typeof(Material)) as Material;
         buildableBox.GetComponent<Renderer>().material = buildDenied;
     }
 
     void OnTriggerExit(Collider collision)
     {
-        Debug.Log("ENTER");
         Material buildDenied = Resources.Load("Materials/BuildMaterials/BuildAlowed", typeof(Material)) as Material;
         buildableBox.GetComponent<Renderer>().material = buildDenied;
-        Debug.Log("ENTER");
     }
 
     void OnTriggerStay(Collider collision)
     {
-        Debug.Log("ENTER");
         Material buildDenied = Resources.Load("Materials/BuildMaterials/BuildDenied", typeof(Material)) as Material;
         buildableBox.GetComponent<Renderer>().material = buildDenied;
-        Debug.Log("ENTER");
     }
 
 }

@@ -60,16 +60,21 @@ public class Commands : MonoBehaviour {
                     ini = true;
                     foreach (Unit unit in A_Units)
                     {
-                        unit.ExecuteCommand(new AICommand(AICommand.CommandType.GoToAndGuard, waypoint1.transform.position));
+                        if (!Unit.IsDeadOrNull(unit))
+                        {
+                            unit.ExecuteCommand(new AICommand(AICommand.CommandType.GoToAndGuard, waypoint1.transform.position));
+                        }
                     }
 
                     Count++;
                 }
+                bool allSet = true;
                 foreach(Unit unit in A_Units)
                 {
-                    if (unit.state != Unit.UnitState.Guarding)
-                        return;
+                    if (unit.state != Unit.UnitState.Guarding && !Unit.IsDeadOrNull(unit))
+                        allSet = false;
                 }
+                if (!allSet) return;
                 stage = Objective.s2;
                 Count = 0;
                 break;
@@ -78,16 +83,20 @@ public class Commands : MonoBehaviour {
                 {
                     foreach (Unit unit in A_Units)
                     {
-                        if (!unit.ifPathEexists(waypoint2.transform.position))
+                        if (!Unit.IsDeadOrNull(unit))
                         {
-                            return;
+                            if (!unit.ifPathEexists(waypoint2.transform.position))
+                            {
+                                Count++;
+                                return;
+                            }
                         }
                         unit.ExecuteCommand(new AICommand(AICommand.CommandType.GoToAndGuard, waypoint2.transform.position));
                     }
                     Count++;
                 }
 
-                
+                allSet = true;
                 foreach (Unit unit in A_Units)
                 {
                     if(unit.state != Unit.UnitState.Dead)

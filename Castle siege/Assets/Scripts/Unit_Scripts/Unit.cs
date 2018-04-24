@@ -32,14 +32,14 @@ public class Unit : MonoBehaviour {
     protected bool isReady = false;
     protected float lastGuardCheckTime, guardCheckInterval = 1f;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         
     }
 
     // Use this for initialization
-    void Start () {
+    protected virtual void Start () {
         stats = Instantiate<UnitStats>(stats);
         animator = GetComponent<Animator>();
     }
@@ -60,7 +60,7 @@ public class Unit : MonoBehaviour {
     //}
 
     // Update is called once per frame
-    void Update() {
+    protected virtual void Update() {
 
         //Cia toks hackas kad agentas gautu laiko nustatyti kito kelio taska.
         if (!isReady)
@@ -177,7 +177,7 @@ public class Unit : MonoBehaviour {
     }
 
     //move to a position and be idle
-    private void GoToAndIdle(Vector3 location)
+    protected virtual void GoToAndIdle(Vector3 location)
     {
         animator.SetBool("Moving", true);
         state = UnitState.MovingToSpotIdle;
@@ -189,7 +189,7 @@ public class Unit : MonoBehaviour {
     }
 
     //move to a position and be guarding
-    private void GoToAndGuard(Vector3 location)
+    protected virtual void GoToAndGuard(Vector3 location)
     {
         animator.SetBool("Moving", true);
         state = UnitState.MovingToSpotGuard;
@@ -201,7 +201,7 @@ public class Unit : MonoBehaviour {
     }
 
     //stop and stay Idle
-    private void Stop()
+    protected virtual void Stop()
     {
         animator.SetBool("Moving", false);
         state = UnitState.Idle;
@@ -213,7 +213,7 @@ public class Unit : MonoBehaviour {
     }
 
     //stop but watch for enemies nearby
-    public void Guard()
+    public virtual void Guard()
     {
         animator.SetBool("Moving", false);
         state = UnitState.Guarding;
@@ -225,7 +225,7 @@ public class Unit : MonoBehaviour {
     }
 
     //move towards a target to attack it
-    private void MoveToAttack(Unit target)
+    protected virtual void MoveToAttack(Unit target)
     {
         if (!IsDeadOrNull(target))
         {
@@ -246,7 +246,7 @@ public class Unit : MonoBehaviour {
     }
 
     //reached the target (within engageDistance), time to attack
-    private void StartAttacking()
+    protected virtual void StartAttacking()
     {
         //somebody might have killed the target while this Unit was approaching it
         if (!IsDeadOrNull(target))
@@ -263,7 +263,7 @@ public class Unit : MonoBehaviour {
     }
 
     //the single blows
-    private IEnumerator DealAttack()
+    protected virtual IEnumerator DealAttack()
     {
         animator.SetTrigger("Attack1Trigger");
         while (target != null)
@@ -304,7 +304,7 @@ public class Unit : MonoBehaviour {
     }
 
     //called by an attacker
-    private void SufferAttack(int damage)
+    public virtual void SufferAttack(int damage)
     {
         if (state == UnitState.Dead)
         {
@@ -322,7 +322,7 @@ public class Unit : MonoBehaviour {
         }
     }
 
-    private Unit GetNearestHostileUnit()
+    protected virtual Unit GetNearestHostileUnit()
     {
         enemies = GameObject.FindGameObjectsWithTag(stats.GetOtherSide().ToString()).Select(x => x.GetComponent<Unit>()).ToArray();
 
@@ -373,12 +373,12 @@ public class Unit : MonoBehaviour {
     /// </summary>
     /// <param name="u">unitas</param>
     /// <returns>grazina true arba false</returns>
-    private bool IsDeadOrNull(Unit u)
+    public static bool IsDeadOrNull(Unit u)
     {
         return (u == null || u.state == UnitState.Dead);
     }
 
-    private void OnDrawGizmos()
+    protected virtual void OnDrawGizmos()
     {
         if (agent != null
             && agent.isOnNavMesh
