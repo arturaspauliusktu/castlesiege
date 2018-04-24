@@ -20,7 +20,7 @@ public class Unit_Archer : Unit {
     protected override void Start()
     {
         base.Start();
-        gravity = -Physics.gravity.magnitude;
+        this.gravity = -Physics.gravity.magnitude;
     }
 
     protected override void Update()
@@ -65,14 +65,18 @@ public class Unit_Archer : Unit {
 
     protected virtual void ShootTarget(Unit target)
     {
+        
+        
         Rigidbody newarrow = (Rigidbody)Instantiate(arrow, spawnpoint.position, spawnpoint.rotation);
         newarrow.velocity = CalculateLounchVelocity(target).initialVelocity;
+
+        newarrow.useGravity = true;
         
     }
 
     private LounchData CalculateLounchVelocity(Unit target)
     {
-        Vector3 p = target.transform.position;      //Target position
+        Vector3 p = target.transform.position + new Vector3(0,2,0);      //Target position
         Vector3 sp = spawnpoint.position; //Spawnpoint position
 
         float displacementY = p.y - sp.y;
