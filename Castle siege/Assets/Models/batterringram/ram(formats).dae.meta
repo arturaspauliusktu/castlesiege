@@ -1,0 +1,216 @@
+fileFormatVersion: 2
+guid: daa452e65a8f7834c907ee6f54704794
+timeCreated: 1523971564
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: asma_kirisleri
+    100002: Capsule
+    100004: cati
+    100006: Cloner
+    100008: Cloner.1
+    100010: Cloner.2
+    100012: Cylinder.1
+    100014: halatlar
+    100016: ipler
+    100018: izgaralar
+    100020: kocbasi
+    100022: korkuluklar
+    100024: koruma
+    100026: ortu
+    100028: ortu2
+    100030: //RootNode
+    100032: Symmetry.1
+    100034: Symmetry.2
+    100036: Symmetry.3
+    100038: tasiyici
+    100040: tekerlekler
+    100042: Tube.1
+    100044: yan_grup
+    100046: zincirler
+    400000: asma_kirisleri
+    400002: Capsule
+    400004: cati
+    400006: Cloner
+    400008: Cloner.1
+    400010: Cloner.2
+    400012: Cylinder.1
+    400014: halatlar
+    400016: ipler
+    400018: izgaralar
+    400020: kocbasi
+    400022: korkuluklar
+    400024: koruma
+    400026: ortu
+    400028: ortu2
+    400030: //RootNode
+    400032: Symmetry.1
+    400034: Symmetry.2
+    400036: Symmetry.3
+    400038: tasiyici
+    400040: tekerlekler
+    400042: Tube.1
+    400044: yan_grup
+    400046: zincirler
+    2100000: halatlar
+    2100002: ortu
+    2100004: ortu2
+    2100006: korkuluklar
+    2100008: Cloner.2
+    2100010: Symmetry.2
+    2100012: Symmetry.1
+    2100014: Symmetry
+    2100016: asma_kirisleri
+    2100018: yan_grup
+    2100020: ipler
+    2100022: zincirler
+    2100024: kocbasi
+    2100026: Capsule
+    2100028: tasiyici
+    2100030: izgaralar
+    2100032: Cloner.1
+    2100034: Cloner
+    2100036: Tube
+    2100038: Cylinder
+    2300000: asma_kirisleri
+    2300002: Capsule
+    2300004: Cloner
+    2300006: Cloner.1
+    2300008: Cloner.2
+    2300010: Cylinder.1
+    2300012: halatlar
+    2300014: ipler
+    2300016: izgaralar
+    2300018: kocbasi
+    2300020: korkuluklar
+    2300022: ortu
+    2300024: ortu2
+    2300026: Symmetry.1
+    2300028: Symmetry.2
+    2300030: Symmetry.3
+    2300032: tasiyici
+    2300034: Tube.1
+    2300036: yan_grup
+    2300038: zincirler
+    3300000: asma_kirisleri
+    3300002: Capsule
+    3300004: Cloner
+    3300006: Cloner.1
+    3300008: Cloner.2
+    3300010: Cylinder.1
+    3300012: halatlar
+    3300014: ipler
+    3300016: izgaralar
+    3300018: kocbasi
+    3300020: korkuluklar
+    3300022: ortu
+    3300024: ortu2
+    3300026: Symmetry.1
+    3300028: Symmetry.2
+    3300030: Symmetry.3
+    3300032: tasiyici
+    3300034: Tube.1
+    3300036: yan_grup
+    3300038: zincirler
+    4300000: halatlar
+    4300002: ortu
+    4300004: ortu2
+    4300006: korkuluklar
+    4300008: Cloner
+    4300010: Symmetry.3
+    4300012: Symmetry.1
+    4300014: Symmetry.2
+    4300016: asma_kirisleri
+    4300018: yan_grup
+    4300020: ipler
+    4300022: zincirler
+    4300024: kocbasi
+    4300026: Capsule
+    4300028: tasiyici
+    4300030: izgaralar
+    4300032: Cloner.1
+    4300034: Cloner.2
+    4300036: Tube.1
+    4300038: Cylinder.1
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,160 @@
+fileFormatVersion: 2
+guid: da6a47604fe831544b464486c9b19f39
+timeCreated: 1523971560
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: ana_kumas
+    100002: boynuz
+    100004: Cinema4D_Editor
+    100006: citler
+    100008: halatlar
+    100010: ipler
+    100012: kovalar
+    100014: kule
+    100016: kumas
+    100018: merdivenler
+    100020: //RootNode
+    100022: siege_tower_1
+    100024: siper
+    100026: tekerlekler
+    400000: ana_kumas
+    400002: boynuz
+    400004: Cinema4D_Editor
+    400006: citler
+    400008: halatlar
+    400010: ipler
+    400012: kovalar
+    400014: kule
+    400016: kumas
+    400018: merdivenler
+    400020: //RootNode
+    400022: siege_tower_1
+    400024: siper
+    400026: tekerlekler
+    2100000: citler
+    2100002: halatlar
+    2100004: kovalar
+    2100006: ipler
+    2100008: merdivenler
+    2100010: siper
+    2100012: kumas
+    2100014: ana kumas
+    2100016: boynuz
+    2100018: tekerlekler
+    2100020: kule
+    2300000: ana_kumas
+    2300002: boynuz
+    2300004: citler
+    2300006: halatlar
+    2300008: ipler
+    2300010: kovalar
+    2300012: kule
+    2300014: kumas
+    2300016: merdivenler
+    2300018: siper
+    2300020: tekerlekler
+    3300000: ana_kumas
+    3300002: boynuz
+    3300004: citler
+    3300006: halatlar
+    3300008: ipler
+    3300010: kovalar
+    3300012: kule
+    3300014: kumas
+    3300016: merdivenler
+    3300018: siper
+    3300020: tekerlekler
+    4300000: citler
+    4300002: halatlar
+    4300004: kovalar
+    4300006: ipler
+    4300008: merdivenler
+    4300010: siper
+    4300012: kumas
+    4300014: ana_kumas
+    4300016: boynuz
+    4300018: tekerlekler
+    4300020: kule
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
