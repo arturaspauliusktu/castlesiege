@@ -130,7 +130,7 @@ public class Commands : MonoBehaviour {
                 foreach (Unit unit in A_Units)
                 {
                     if (unit.state != Unit.UnitState.Dead)
-                        if (unit.state != Unit.UnitState.Guarding)
+                        if (unit.state != Unit.UnitState.Guarding && unit.agent.remainingDistance <= 60f)
                             return;
                        
                 }

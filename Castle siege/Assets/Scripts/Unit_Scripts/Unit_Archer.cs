@@ -26,7 +26,7 @@ public class Unit_Archer : Unit {
     protected override void Update()
     {
         base.Update();
-        if (debugPath)
+        if (debugPath && target != null)
             DrawPath(target);
     }
 
@@ -65,8 +65,9 @@ public class Unit_Archer : Unit {
 
     protected virtual void ShootTarget(Unit target)
     {
-        
-        
+        animator.SetTrigger("Attack1Trigger");
+
+
         Rigidbody newarrow = (Rigidbody)Instantiate(arrow, spawnpoint.position, spawnpoint.rotation);
         newarrow.velocity = CalculateLounchVelocity(target).initialVelocity;
 
@@ -78,6 +79,9 @@ public class Unit_Archer : Unit {
     {
         Vector3 p = target.transform.position + new Vector3(0,2,0);      //Target position
         Vector3 sp = spawnpoint.position; //Spawnpoint position
+
+        float distance = Vector3.Distance(p, sp);
+        h = distance*distance/5000;
 
         float displacementY = p.y - sp.y;
         Vector3 displacementXZ = new Vector3(p.x - sp.x, 0, p.z - sp.z);
