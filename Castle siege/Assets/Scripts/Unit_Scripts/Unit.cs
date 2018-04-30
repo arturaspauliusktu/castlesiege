@@ -10,6 +10,9 @@ public class Unit : MonoBehaviour {
     public UnitStats stats;
     public UnitState state = UnitState.Idle;
     public Animator animator;
+    private SpriteRenderer selectionCircle;
+
+    public UnityAction<Unit> OnDie;
 
     public enum UnitState
     {
@@ -35,7 +38,9 @@ public class Unit : MonoBehaviour {
     protected virtual void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
-        
+
+        selectionCircle = transform.Find("SelectionCircle").GetComponent<SpriteRenderer>();
+
     }
 
     // Use this for initialization
@@ -357,6 +362,11 @@ public class Unit : MonoBehaviour {
         Debug.Log(gameObject.ToString() + " Just died");
         state = UnitState.Dead;
 
+        if (OnDie != null)
+        {
+            OnDie(this);
+        }
+
         gameObject.tag = "Untagged"; //Kad kiti agentai nepultu lavono.
         gameObject.layer = 0;
 
@@ -376,6 +386,14 @@ public class Unit : MonoBehaviour {
     public static bool IsDeadOrNull(Unit u)
     {
         return (u == null || u.state == UnitState.Dead);
+    }
+
+    public void SetSelected(bool selected)
+    {
+        //Set transparency dependent on selection
+        Color newColor = selectionCircle.color;
+        newColor.a = (selected) ? 1f : .5f;
+        selectionCircle.color = newColor;
     }
 
     protected virtual void OnDrawGizmos()
