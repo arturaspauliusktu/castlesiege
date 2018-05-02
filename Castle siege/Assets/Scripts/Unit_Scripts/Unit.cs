@@ -39,6 +39,8 @@ public class Unit : MonoBehaviour {
     {
         agent = GetComponent<NavMeshAgent>();
 
+        animator = GetComponent<Animator>();
+
         selectionCircle = transform.Find("SelectionCircle").GetComponent<SpriteRenderer>();
 
     }
@@ -46,7 +48,11 @@ public class Unit : MonoBehaviour {
     // Use this for initialization
     protected virtual void Start () {
         stats = Instantiate<UnitStats>(stats);
-        animator = GetComponent<Animator>();
+
+        if(stats.side == UnitStats.Sides.Attacker)
+        {
+            UnitManager.instance.units.Add(this);
+        }
     }
 
     //Gauna damage jei uzkrenta ant unito kazkas.
@@ -278,7 +284,7 @@ public class Unit : MonoBehaviour {
             target.SufferAttack(stats.attackPower);
             animator.SetBool("Moving", false);
 
-            yield return new WaitForSeconds(2f / stats.attackSpeed);
+            yield return new WaitForSeconds(stats.attackSpeed);
 
             //check is performed after the wait, because somebody might have killed the target in the meantime
             if (IsDeadOrNull(target))

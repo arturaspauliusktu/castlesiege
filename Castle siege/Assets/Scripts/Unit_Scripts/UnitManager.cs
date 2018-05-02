@@ -15,5 +15,11 @@ public class UnitManager : MonoBehaviour {
 
     #endregion
 
-    public GameObject Unit;
+    public List<Unit> units;
+    public List<Unit> archers;
+    public List<Unit> fighters;
+    public List<Unit> knights;
+    public List<Unit> catapults;
+    public List<Unit> rams;
+    public List<Unit> towers;
 }

@@ -346,7 +346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4838330244652122}
   m_Layer: 0
-  m_Name: catapult
+  m_Name: Unit_Catapult_Attacker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2343,6 +2343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 0}
   state: 0
+  animator: {fileID: 0}
   agent: {fileID: 0}
 --- !u!135 &135102948393631326
 SphereCollider:

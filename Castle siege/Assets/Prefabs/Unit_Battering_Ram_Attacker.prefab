@@ -70,7 +70,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4837118879275870}
   m_Layer: 0
-  m_Name: Battering_Ram
+  m_Name: Unit_Battering_Ram_Attacker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
