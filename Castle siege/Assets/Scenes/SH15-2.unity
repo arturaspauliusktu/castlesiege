@@ -4529,11 +4529,31 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
+--- !u!1 &142679249 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1365529248550242, guid: 247a3a1d626176d459c61ba3a79d1f35,
+    type: 2}
+  m_PrefabInternal: {fileID: 1095473809}
 --- !u!4 &142679250 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4181137404115030, guid: 247a3a1d626176d459c61ba3a79d1f35,
     type: 2}
   m_PrefabInternal: {fileID: 1095473809}
+--- !u!114 &142679251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 142679249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 313d988d8ce9591438164c9461210caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: e49b5ba3606a7bd4083e873f2fd2782f, type: 2}
+  state: 0
+  animator: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!43 &144764597
 Mesh:
   m_ObjectHideFlags: 0
@@ -21563,6 +21583,25 @@ Transform:
   m_Father: {fileID: 877665604}
   m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &698329481 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: c1ece6a75c5792b44994826b829185a5, type: 2}
+  m_PrefabInternal: {fileID: 829661482}
+--- !u!114 &698329482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 698329481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaad414551453594dbcee6a90a67772b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: e14bb81a8f57a77478ce5b42fe5c4a81, type: 2}
+  state: 0
+  animator: {fileID: 0}
+  agent: {fileID: 0}
 --- !u!43 &706132856
 Mesh:
   m_ObjectHideFlags: 0
@@ -26633,7 +26672,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114604903396849478, guid: c1ece6a75c5792b44994826b829185a5, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: c1ece6a75c5792b44994826b829185a5, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &840741044
@@ -34762,7 +34802,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114865868792019370, guid: 247a3a1d626176d459c61ba3a79d1f35, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 247a3a1d626176d459c61ba3a79d1f35, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1097751705

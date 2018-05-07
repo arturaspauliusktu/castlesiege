@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 9590292}
   - component: {fileID: 65382086045456298}
   - component: {fileID: 195098658648157170}
-  - component: {fileID: 114604903396849478}
   - component: {fileID: 54397602577159052}
+  - component: {fileID: 114204106982045088}
   m_Layer: 0
   m_Name: Unit_Knight_Warrior_Attacker
   m_TagString: Attacker
@@ -1915,7 +1915,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2.4563963, z: 1}
   m_Center: {x: 0, y: 1.2626112, z: 0}
---- !u!114 &114604903396849478
+--- !u!114 &114204106982045088
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1923,10 +1923,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14c6f94312747c8409783e1a4a827dcd, type: 3}
+  m_Script: {fileID: 11500000, guid: aaad414551453594dbcee6a90a67772b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: e49b5ba3606a7bd4083e873f2fd2782f, type: 2}
+  stats: {fileID: 11400000, guid: e14bb81a8f57a77478ce5b42fe5c4a81, type: 2}
   state: 0
   animator: {fileID: 0}
   agent: {fileID: 0}

@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 95269857892008496}
   - component: {fileID: 65615858540843494}
   - component: {fileID: 195946119918456194}
-  - component: {fileID: 114865868792019370}
+  - component: {fileID: 114597723994110882}
   m_Layer: 14
   m_Name: Unit_2Handed_Warrior_Attacker
   m_TagString: Attacker
@@ -1720,7 +1720,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114865868792019370
+--- !u!114 &114597723994110882
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1728,11 +1728,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1365529248550242}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14c6f94312747c8409783e1a4a827dcd, type: 3}
+  m_Script: {fileID: 11500000, guid: 313d988d8ce9591438164c9461210caf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: e49b5ba3606a7bd4083e873f2fd2782f, type: 2}
-  state: 1
+  state: 0
   animator: {fileID: 0}
   agent: {fileID: 0}
 --- !u!137 &137770159222053690
