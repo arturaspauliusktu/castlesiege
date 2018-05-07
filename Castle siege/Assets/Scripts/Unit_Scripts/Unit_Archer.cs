@@ -9,7 +9,7 @@ public class Unit_Archer : Unit {
 
     public Transform spawnpoint;
 
-    public Rigidbody arrow;
+    public Rigidbody projectile;
 
     public float h = 10;
 
@@ -21,6 +21,11 @@ public class Unit_Archer : Unit {
     {
         base.Start();
         this.gravity = -Physics.gravity.magnitude;
+
+        if (stats.side == UnitStats.Sides.Attacker)
+        {
+            UnitManager.instance.archers.Add(this);
+        }
     }
 
     protected override void Update()
@@ -40,7 +45,7 @@ public class Unit_Archer : Unit {
             ShootTarget(target);
             animator.SetBool("Moving", false);
 
-            yield return new WaitForSeconds(2f / stats.attackSpeed);
+            yield return new WaitForSeconds(stats.attackSpeed);
 
             //check is performed after the wait, because somebody might have killed the target in the meantime
             if (IsDeadOrNull(target))
@@ -68,14 +73,14 @@ public class Unit_Archer : Unit {
         animator.SetTrigger("Attack1Trigger");
 
 
-        Rigidbody newarrow = (Rigidbody)Instantiate(arrow, spawnpoint.position, spawnpoint.rotation);
+        Rigidbody newarrow = (Rigidbody)Instantiate(projectile, spawnpoint.position, spawnpoint.rotation);
         newarrow.velocity = CalculateLounchVelocity(target).initialVelocity;
 
         newarrow.useGravity = true;
         
     }
 
-    private LounchData CalculateLounchVelocity(Unit target)
+    protected LounchData CalculateLounchVelocity(Unit target)
     {
         Vector3 p = target.transform.position + new Vector3(0,2,0);      //Target position
         Vector3 sp = spawnpoint.position; //Spawnpoint position
@@ -94,7 +99,7 @@ public class Unit_Archer : Unit {
         return new LounchData(velocity, time);
     }
 
-    void DrawPath(Unit target)
+    protected void DrawPath(Unit target)
     {
         LounchData lounchData = CalculateLounchVelocity(target);
         Vector3 previousDrawPoint = spawnpoint.position;
@@ -110,7 +115,7 @@ public class Unit_Archer : Unit {
         }
     }
 
-    struct LounchData
+    protected struct LounchData
     {
         public readonly Vector3 initialVelocity;
         public readonly float timeToTarget;
@@ -120,5 +125,12 @@ public class Unit_Archer : Unit {
             this.timeToTarget = timeToTarget;
             this.initialVelocity = initialVelocity;
         }
+    }
+
+    protected override void UnitDie()
+    {
+        base.UnitDie();
+        UnitManager.instance.archers.Remove(this);
+        UnitManager.instance.units.Remove(this);
     }
 }
