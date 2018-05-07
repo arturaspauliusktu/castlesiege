@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Events;
 using System.Linq;
 
 public class Unit : MonoBehaviour {
-
-    public UnitStats stats;
+        public UnitStats stats;
     public UnitState state = UnitState.Idle;
     public Animator animator;
+
+    // Singletone skirtas unit mirčiai fiksuoti
+    KillCounter KC;
 
     public enum UnitState
     {
@@ -35,6 +36,9 @@ public class Unit : MonoBehaviour {
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+    // Singletone skirtas unit mirčiai fiksuoti
+        KC = GameObject.FindObjectOfType<KillCounter>();
+        Debug.Log(KC);
         
     }
 
@@ -354,6 +358,9 @@ public class Unit : MonoBehaviour {
     /// </summary>
     protected virtual void UnitDie()
     {
+        // fiksuoja unit mirty KillCounter
+        if (gameObject.tag == "Attacker") KC.RemAtk();
+        if (gameObject.tag == "Defender") KC.RemDef();
         Debug.Log(gameObject.ToString() + " Just died");
         state = UnitState.Dead;
 
