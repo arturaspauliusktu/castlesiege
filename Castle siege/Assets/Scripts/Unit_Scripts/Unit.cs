@@ -10,6 +10,7 @@ public class Unit : MonoBehaviour {
     public UnitStats stats;
     public UnitState state = UnitState.Idle;
     public Animator animator;
+    public Commands commands;
     private SpriteRenderer selectionCircle;
 
     public UnityAction<Unit> OnDie;
@@ -52,6 +53,21 @@ public class Unit : MonoBehaviour {
         if(stats.side == UnitStats.Sides.Attacker)
         {
             UnitManager.instance.units.Add(this);
+        }
+
+        if (stats.side == UnitStats.Sides.Defender)
+        {
+            UnitManager.instance.DefenderUnits.Add(this);
+        }
+
+        if (stats.unitType == UnitStats.UnitType.King)
+        {
+            UnitManager.instance.king = this;
+        }
+
+        if (stats.unitType == UnitStats.UnitType.Door)
+        {
+            UnitManager.instance.door = this;
         }
     }
 

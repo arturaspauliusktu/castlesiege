@@ -22,4 +22,7 @@ public class UnitManager : MonoBehaviour {
     public List<Unit> catapults;
     public List<Unit> rams;
     public List<Unit> towers;
+    public List<Unit> DefenderUnits;
+    public Unit king;
+    public Unit door;
 }
