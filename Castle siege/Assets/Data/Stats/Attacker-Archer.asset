@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Name: Attacker-Archer
   m_EditorClassIdentifier: 
   side: 1
-  health: 100
+  health: 50
   attackPower: 5
-  attackSpeed: 0.5
+  attackSpeed: 1.02
   engageDistance: 300
   guardDistance: 400
+  unitType: 0

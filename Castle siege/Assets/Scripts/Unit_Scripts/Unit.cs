@@ -5,11 +5,17 @@ using UnityEngine.AI;
 using UnityEngine.Events;
 using System.Linq;
 
-public class Unit : MonoBehaviour {
-
+public class Unit : MonoBehaviour
+{
+    //Kill Counter singletone for unit count 
+    KillCounter KC;
     public UnitStats stats;
     public UnitState state = UnitState.Idle;
     public Animator animator;
+    private SpriteRenderer selectionCircle;
+    protected bool isRunning;
+
+    public UnityAction<Unit> OnDie;
 
     public enum UnitState
     {
@@ -34,14 +40,42 @@ public class Unit : MonoBehaviour {
 
     protected virtual void Awake()
     {
+        //Priskiriamas KillCounter
+        KC = GameObject.FindObjectOfType<KillCounter>();
+        if (gameObject.tag == "Attacker") KC.AddAtk();
+
         agent = GetComponent<NavMeshAgent>();
-        
+
+        animator = GetComponent<Animator>();
+
+        selectionCircle = transform.Find("SelectionCircle").GetComponent<SpriteRenderer>();
+
     }
 
     // Use this for initialization
-    protected virtual void Start () {
+    protected virtual void Start()
+    {
         stats = Instantiate<UnitStats>(stats);
-        animator = GetComponent<Animator>();
+
+        if (stats.side == UnitStats.Sides.Attacker)
+        {
+            UnitManager.instance.units.Add(this);
+        }
+
+        if (stats.side == UnitStats.Sides.Defender && stats.unitType != UnitStats.UnitType.King && stats.unitType != UnitStats.UnitType.Door)
+        {
+            UnitManager.instance.DefenderUnits.Add(this);
+        }
+
+        if (stats.unitType == UnitStats.UnitType.King)
+        {
+            UnitManager.instance.king = this;
+        }
+
+        if (stats.unitType == UnitStats.UnitType.Door)
+        {
+            UnitManager.instance.door = this;
+        }
     }
 
     //Gauna damage jei uzkrenta ant unito kazkas.
@@ -60,7 +94,8 @@ public class Unit : MonoBehaviour {
     //}
 
     // Update is called once per frame
-    protected virtual void Update() {
+    protected virtual void Update()
+    {
 
         //Cia toks hackas kad agentas gautu laiko nustatyti kito kelio taska.
         if (!isReady)
@@ -254,7 +289,7 @@ public class Unit : MonoBehaviour {
             state = UnitState.Attacking;
             isReady = false;
             agent.isStopped = true;
-            StartCoroutine(DealAttack());
+            if (!isRunning) StartCoroutine(DealAttack());
         }
         else
         {
@@ -265,15 +300,16 @@ public class Unit : MonoBehaviour {
     //the single blows
     protected virtual IEnumerator DealAttack()
     {
+        isRunning = true;
         animator.SetTrigger("Attack1Trigger");
         while (target != null)
         {
-            
+
             //Kautyniu animacija
             target.SufferAttack(stats.attackPower);
             animator.SetBool("Moving", false);
 
-            yield return new WaitForSeconds(2f / stats.attackSpeed);
+            yield return new WaitForSeconds(stats.attackSpeed);
 
             //check is performed after the wait, because somebody might have killed the target in the meantime
             if (IsDeadOrNull(target))
@@ -293,6 +329,7 @@ public class Unit : MonoBehaviour {
             {
                 MoveToAttack(target);
             }
+            isRunning = false;
         }
 
 
@@ -357,6 +394,13 @@ public class Unit : MonoBehaviour {
         Debug.Log(gameObject.ToString() + " Just died");
         state = UnitState.Dead;
 
+        if (OnDie != null)
+        {
+            OnDie(this);
+        }
+        if (gameObject.tag == "Attacker") KC.RemAtk();
+        if (gameObject.tag == "Defender") KC.RemDef();
+
         gameObject.tag = "Untagged"; //Kad kiti agentai nepultu lavono.
         gameObject.layer = 0;
 
@@ -365,6 +409,7 @@ public class Unit : MonoBehaviour {
         Destroy(gameObject.GetComponent<MeshFilter>());
         Destroy(gameObject.GetComponent<BoxCollider>());
         Destroy(gameObject.GetComponent<Rigidbody>());
+        Destroy(gameObject.GetComponent<Commands>());
     }
 
     /// <summary>
@@ -376,6 +421,14 @@ public class Unit : MonoBehaviour {
     public static bool IsDeadOrNull(Unit u)
     {
         return (u == null || u.state == UnitState.Dead);
+    }
+
+    public void SetSelected(bool selected)
+    {
+        //Set transparency dependent on selection
+        Color newColor = selectionCircle.color;
+        newColor.a = (selected) ? 1f : .5f;
+        selectionCircle.color = newColor;
     }
 
     protected virtual void OnDrawGizmos()

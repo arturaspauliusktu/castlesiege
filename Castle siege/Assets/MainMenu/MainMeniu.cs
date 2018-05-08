@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMeniu : MonoBehaviour {
 
+    public string gameScene;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -17,12 +19,11 @@ public class MainMeniu : MonoBehaviour {
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("WA13");
+        SceneManager.LoadScene(gameScene);
     }
 
     public void QuitGame()
     {
-        Debug.Log("Quit");
         Application.Quit();
     }
 }

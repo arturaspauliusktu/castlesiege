@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1e06cf33a720ef549b95f30c1316a41a
+guid: c6c095764eba2c146aadec7e8a081a9c
 timeCreated: 18446744011573954816
 ModelImporter:
   serializedVersion: 22
@@ -29,7 +29,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Mat
-    second: {fileID: 2100000, guid: f8604e56d5370434a8135595f8906b70, type: 2}
+    second: {fileID: 2100000, guid: da97fd624ebf1864283be2e8f380a8a2, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

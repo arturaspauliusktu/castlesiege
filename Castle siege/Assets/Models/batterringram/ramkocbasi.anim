@@ -24,33 +24,21 @@ AnimationClip:
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
       - serializedVersion: 2
-        time: 0.65833336
-        value: {x: 1.09, y: 0.94363844, z: 0}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-      - serializedVersion: 2
-        time: 0.7
-        value: {x: 0.29999998, y: 0.94363844, z: 0}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-      - serializedVersion: 2
-        time: 0.725
-        value: {x: 0.39, y: 1.01, z: 0}
+        time: 0.083333336
+        value: {x: -1.16, y: 0.94363844, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
       - serializedVersion: 2
         time: 0.7416667
-        value: {x: 0.35, y: 0.97, z: 0}
+        value: {x: 0.29999998, y: 0.94363844, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: kocbasi
+    path: ram(formats)/RAM_1/kocbasi
   m_ScaleCurves: []
   m_FloatCurves: []
   m_PPtrCurves: []
@@ -62,7 +50,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3685423653
+      path: 393772958
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -100,26 +88,14 @@ AnimationClip:
         outSlope: 0
         tangentMode: 136
       - serializedVersion: 2
-        time: 0.65833336
-        value: 1.09
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-      - serializedVersion: 2
-        time: 0.7
-        value: 0.29999998
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-      - serializedVersion: 2
-        time: 0.725
-        value: 0.39
+        time: 0.083333336
+        value: -1.16
         inSlope: 0
         outSlope: 0
         tangentMode: 136
       - serializedVersion: 2
         time: 0.7416667
-        value: 0.35
+        value: 0.29999998
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -127,7 +103,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: kocbasi
+    path: ram(formats)/RAM_1/kocbasi
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -140,26 +116,14 @@ AnimationClip:
         outSlope: 0
         tangentMode: 136
       - serializedVersion: 2
-        time: 0.65833336
+        time: 0.083333336
         value: 0.94363844
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-      - serializedVersion: 2
-        time: 0.7
-        value: 0.94363844
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-      - serializedVersion: 2
-        time: 0.725
-        value: 1.01
         inSlope: 0
         outSlope: 0
         tangentMode: 136
       - serializedVersion: 2
         time: 0.7416667
-        value: 0.97
+        value: 0.94363844
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -167,7 +131,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: kocbasi
+    path: ram(formats)/RAM_1/kocbasi
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -180,19 +144,7 @@ AnimationClip:
         outSlope: 0
         tangentMode: 136
       - serializedVersion: 2
-        time: 0.65833336
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-      - serializedVersion: 2
-        time: 0.7
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-      - serializedVersion: 2
-        time: 0.725
+        time: 0.083333336
         value: 0
         inSlope: 0
         outSlope: 0
@@ -207,7 +159,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: kocbasi
+    path: ram(formats)/RAM_1/kocbasi
     classID: 4
     script: {fileID: 0}
   m_EulerEditorCurves: []

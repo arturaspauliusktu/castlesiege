@@ -52,7 +52,6 @@ public class Shooting : MonoBehaviour {
     public void Loose()
     {
         Rigidbody newProject = (Rigidbody)Instantiate(project, spawnPoint.position, spawnPoint.rotation);
-        GameObject gun = GameObject.FindGameObjectsWithTag("gun")[0];
         newProject.AddForce(spawnPoint.transform.forward * force, ForceMode.VelocityChange);
     }
 }
