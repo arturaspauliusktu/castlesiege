@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 195098658648157170}
   - component: {fileID: 54397602577159052}
   - component: {fileID: 114204106982045088}
+  - component: {fileID: 114083456703188640}
   m_Layer: 0
   m_Name: Unit_Knight_Warrior_Attacker
   m_TagString: Attacker
@@ -855,7 +856,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 400.2, y: 0, z: 22.81}
+  m_LocalPosition: {x: 900, y: 0, z: 22.81}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 480304}
@@ -1915,6 +1916,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2.4563963, z: 1}
   m_Center: {x: 0, y: 1.2626112, z: 0}
+--- !u!114 &114083456703188640
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 049ca145a95d0154884daed1bf79992b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stage: 0
+  unit: {fileID: 114204106982045088}
+  waypoint1: {fileID: 0}
+  waypoint2: {fileID: 0}
+  waypoint3: {fileID: 0}
+  waypoint4: {fileID: 0}
+  waypoint5: {fileID: 0}
 --- !u!114 &114204106982045088
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1929,6 +1948,7 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: e14bb81a8f57a77478ce5b42fe5c4a81, type: 2}
   state: 0
   animator: {fileID: 0}
+  commands: {fileID: 0}
   agent: {fileID: 0}
 --- !u!195 &195098658648157170
 NavMeshAgent:

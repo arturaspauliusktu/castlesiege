@@ -24,15 +24,14 @@ public class Commands : MonoBehaviour {
     public GameObject waypoint5;
 
 
-    private void Start()
+    private void Awake()
     {
         unit = GetComponent<Unit>();
+        InvokeRepeating("WarriorMission", 0, 1);
     }
 
     private void Update()
     {
-        WarriorMission();
-
     }
 
 
@@ -56,14 +55,21 @@ public class Commands : MonoBehaviour {
                 if (!ini)
                 {
                     unit.ExecuteCommand(new AICommand(AICommand.CommandType.GoToAndGuard, waypoint1.transform.position));
-                    ini = true;
+                    isReady = false;
+                    if (!unit.agent.pathPending)
+                        ini = true;
+                    return;
+                }
+
+
+
+                if (unit.agent.remainingDistance >= 60f)
+                {
+                    ini = false;
+                    return;
                 }
                     
 
-                bool allSet = true;
-                if (unit.state != Unit.UnitState.Guarding && !Unit.IsDeadOrNull(unit))
-                    allSet = false;
-                if (!allSet) return;
                 stage = Objective.s2;
                 ini = false;
                 break;
@@ -74,10 +80,18 @@ public class Commands : MonoBehaviour {
                 if (!ini)
                 {
                     if (unit.stats.unitType == UnitStats.UnitType.Archer)
+                    {
                         unit.ExecuteCommand(new AICommand(AICommand.CommandType.GoToAndGuard, waypoint5.transform.position));
+                    }
+                        
                     else
+                    {
                         unit.ExecuteCommand(new AICommand(AICommand.CommandType.GoToAndGuard, waypoint2.transform.position));
-                    ini = true;
+                        isReady = false;
+                    }
+                    if (!unit.agent.pathPending)
+                        ini = true;
+                    return;
                 }
 
 
@@ -85,7 +99,7 @@ public class Commands : MonoBehaviour {
 
                 foreach (Unit unit in UnitManager.instance.DefenderUnits)
                 {
-                    if (Unit.IsDeadOrNull(unit))
+                    if (!Unit.IsDeadOrNull(unit))
                         return;
                 }
 
@@ -98,18 +112,27 @@ public class Commands : MonoBehaviour {
                 if (!ini)
                 {
                     unit.ExecuteCommand(new AICommand(AICommand.CommandType.GoToAndGuard, waypoint3.transform.position));
-                    ini = true;
+                    if (!unit.agent.pathPending)
+                        ini = true;
+                    return;
                 }
 
                 if (unit.stats.unitType == UnitStats.UnitType.Archer)
                 {
-                    if (unit.state != Unit.UnitState.Guarding && unit.agent.remainingDistance <= 120f)
+                    if (unit.state != Unit.UnitState.Guarding && unit.agent.remainingDistance >= 120f)
+                    {
+                        ini = false;
                         return;
+                    }
+                        
                 }
                 else
                 {
-                    if (unit.state != Unit.UnitState.Guarding && unit.agent.remainingDistance <= 30f)
+                    if (unit.state != Unit.UnitState.Guarding && unit.agent.remainingDistance >= 30f)
+                    {
+                        ini = false;
                         return;
+                    }
                 }
                     
 
@@ -126,18 +149,20 @@ public class Commands : MonoBehaviour {
                 if (ini)
                 {
                     unit.ExecuteCommand(new AICommand(AICommand.CommandType.AttackTarget, waypoint4.transform.position));
-                    ini = true;
+                    if (!unit.agent.pathPending)
+                        ini = true;
+                    return;
                 }
 
 
                 if (unit.stats.unitType == UnitStats.UnitType.Archer)
                 {
-                    if (unit.state != Unit.UnitState.Guarding && unit.agent.remainingDistance <= 60f)
+                    if (unit.state != Unit.UnitState.Guarding && unit.agent.remainingDistance >= 60f)
                         return;
                 }
                 else
                 {
-                    if (unit.state != Unit.UnitState.Guarding && unit.agent.remainingDistance <= 30f)
+                    if (unit.state != Unit.UnitState.Guarding && unit.agent.remainingDistance >= 30f)
                         return;
                 }
 

@@ -37,6 +37,7 @@ public class Unit_Archer : Unit {
 
     protected override IEnumerator DealAttack()
     {
+        isRunning = true;
         animator.SetTrigger("Attack1Trigger");
         while (target != null)
         {
@@ -66,6 +67,7 @@ public class Unit_Archer : Unit {
                 MoveToAttack(target);
             }
         }
+        isRunning = false;
     }
 
     protected virtual void ShootTarget(Unit target)
