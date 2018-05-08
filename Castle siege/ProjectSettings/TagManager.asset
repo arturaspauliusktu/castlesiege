@@ -12,7 +12,6 @@ TagManager:
   - Walkable_Surface
   - Attacker
   - Defender
-  - Catapult
   layers:
   - Default
   - TransparentFX

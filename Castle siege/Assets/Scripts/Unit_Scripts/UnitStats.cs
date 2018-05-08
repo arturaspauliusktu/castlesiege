@@ -22,8 +22,6 @@ public class UnitStats : ScriptableObject {
     public float engageDistance = 1f;
     [Tooltip("Did. Atstumas kai pradedama pulti priesa")]
     public float guardDistance = 5f;
-    [Tooltip("Nurodo koks unito tipas")]
-    public UnitType unitType = UnitType.Fighter;
 
     public Sides GetOtherSide()
     {
@@ -35,16 +33,5 @@ public class UnitStats : ScriptableObject {
         {
             return Sides.Defender;
         }
-    }
-
-    public enum UnitType
-    {
-        Archer,
-        Fighter,
-        Catapult,
-        Siege,
-        Ram,
-        King,
-        Door
     }
 }
