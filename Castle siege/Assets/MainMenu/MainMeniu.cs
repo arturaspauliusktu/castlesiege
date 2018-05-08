@@ -17,7 +17,7 @@ public class MainMeniu : MonoBehaviour {
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("WA13");
     }
 
     public void QuitGame()

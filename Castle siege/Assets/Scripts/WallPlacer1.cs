@@ -136,7 +136,7 @@ public class WallPlacer1 : MonoBehaviour
             if (Input.GetKeyDown("r"))
             {
                 buildable.transform.eulerAngles = new Vector3(buildable.transform.eulerAngles.x, buildable.transform.eulerAngles.y, buildable.transform.eulerAngles.z + 90);
-     
+
                 buildableBox.transform.position = buildable.transform.position + new Vector3(0, 0.8f, 0);
                 buildableBox.transform.localScale = buildable.GetComponent<Renderer>().bounds.size;
             }

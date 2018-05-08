@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 using System.Linq;
 
 public class Unit : MonoBehaviour {
-        public UnitStats stats;
+
+    public UnitStats stats;
     public UnitState state = UnitState.Idle;
     public Animator animator;
 
@@ -36,14 +38,15 @@ public class Unit : MonoBehaviour {
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
-    // Singletone skirtas unit mirčiai fiksuoti
+        // Singletone skirtas unit mirčiai fiksuoti
         KC = GameObject.FindObjectOfType<KillCounter>();
         Debug.Log(KC);
-        
+
     }
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         stats = Instantiate<UnitStats>(stats);
         animator = GetComponent<Animator>();
     }
@@ -64,7 +67,8 @@ public class Unit : MonoBehaviour {
     //}
 
     // Update is called once per frame
-    void Update() {
+    void Update()
+    {
 
         //Cia toks hackas kad agentas gautu laiko nustatyti kito kelio taska.
         if (!isReady)
@@ -272,7 +276,7 @@ public class Unit : MonoBehaviour {
         animator.SetTrigger("Attack1Trigger");
         while (target != null)
         {
-            
+
             //Kautyniu animacija
             target.SufferAttack(stats.attackPower);
             animator.SetBool("Moving", false);
