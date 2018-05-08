@@ -15,5 +15,6 @@ MonoBehaviour:
   health: 100
   attackPower: 12
   attackSpeed: 1
-  engageDistance: 2
+  engageDistance: 20
   guardDistance: 100
+  unitType: 1

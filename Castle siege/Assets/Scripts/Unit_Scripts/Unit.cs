@@ -10,7 +10,9 @@ public class Unit : MonoBehaviour {
     public UnitStats stats;
     public UnitState state = UnitState.Idle;
     public Animator animator;
+    public Commands commands;
     private SpriteRenderer selectionCircle;
+    protected bool isRunning;
 
     public UnityAction<Unit> OnDie;
 
@@ -52,6 +54,21 @@ public class Unit : MonoBehaviour {
         if(stats.side == UnitStats.Sides.Attacker)
         {
             UnitManager.instance.units.Add(this);
+        }
+
+        if (stats.side == UnitStats.Sides.Defender && stats.unitType != UnitStats.UnitType.King && stats.unitType != UnitStats.UnitType.Door)
+        {
+            UnitManager.instance.DefenderUnits.Add(this);
+        }
+
+        if (stats.unitType == UnitStats.UnitType.King)
+        {
+            UnitManager.instance.king = this;
+        }
+
+        if (stats.unitType == UnitStats.UnitType.Door)
+        {
+            UnitManager.instance.door = this;
         }
     }
 
@@ -265,7 +282,7 @@ public class Unit : MonoBehaviour {
             state = UnitState.Attacking;
             isReady = false;
             agent.isStopped = true;
-            StartCoroutine(DealAttack());
+            if(!isRunning)StartCoroutine(DealAttack());
         }
         else
         {
@@ -276,6 +293,7 @@ public class Unit : MonoBehaviour {
     //the single blows
     protected virtual IEnumerator DealAttack()
     {
+        isRunning = true;
         animator.SetTrigger("Attack1Trigger");
         while (target != null)
         {
@@ -304,6 +322,7 @@ public class Unit : MonoBehaviour {
             {
                 MoveToAttack(target);
             }
+            isRunning = false;
         }
 
 
@@ -381,6 +400,7 @@ public class Unit : MonoBehaviour {
         Destroy(gameObject.GetComponent<MeshFilter>());
         Destroy(gameObject.GetComponent<BoxCollider>());
         Destroy(gameObject.GetComponent<Rigidbody>());
+        Destroy(gameObject.GetComponent<Commands>());
     }
 
     /// <summary>

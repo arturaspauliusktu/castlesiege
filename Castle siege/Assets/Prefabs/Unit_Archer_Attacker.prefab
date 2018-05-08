@@ -597,6 +597,7 @@ GameObject:
   - component: {fileID: 95994508877834244}
   - component: {fileID: 114602769290048854}
   - component: {fileID: 195573664745624676}
+  - component: {fileID: 114268915475585234}
   m_Layer: 0
   m_Name: Unit_Archer_Attacker
   m_TagString: Attacker
@@ -1527,7 +1528,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1624527442590050}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 400, y: 0, z: 38.7}
+  m_LocalPosition: {x: 900, y: 0.15, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 4393508908331868}
@@ -1753,6 +1754,24 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114268915475585234
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1624527442590050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 049ca145a95d0154884daed1bf79992b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stage: 0
+  unit: {fileID: 114602769290048854}
+  waypoint1: {fileID: 0}
+  waypoint2: {fileID: 0}
+  waypoint3: {fileID: 0}
+  waypoint4: {fileID: 0}
+  waypoint5: {fileID: 0}
 --- !u!114 &114602769290048854
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1767,6 +1786,7 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: a40a54b27f6277e46883a2171b31bc8e, type: 2}
   state: 1
   animator: {fileID: 0}
+  commands: {fileID: 0}
   agent: {fileID: 0}
   spawnpoint: {fileID: 4968623542168856}
   projectile: {fileID: 54857286382020214, guid: 74e3e99432e72184bbb8c0fce21a3b30,
