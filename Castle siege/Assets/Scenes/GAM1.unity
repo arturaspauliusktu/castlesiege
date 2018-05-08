@@ -4934,6 +4934,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1624527442590050, guid: 8089ad53db8e83f4ab1d87ed73ade202, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8089ad53db8e83f4ab1d87ed73ade202, type: 2}
   m_IsPrefabParent: 0
@@ -5907,6 +5911,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 100
   spawnpoint: {fileID: 188863187}
+  archer: {fileID: 1198742500}
+  knight: {fileID: 2129924854}
+  fighter: {fileID: 400990412}
+  catapult: {fileID: 1538617789678256, guid: d75e6768cecd3904b827e9594f700c57, type: 2}
 --- !u!43 &191071541
 Mesh:
   m_ObjectHideFlags: 0
@@ -63232,6 +63240,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1365529248550242, guid: 247a3a1d626176d459c61ba3a79d1f35, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 247a3a1d626176d459c61ba3a79d1f35, type: 2}
   m_IsPrefabParent: 0
@@ -66371,6 +66383,10 @@ Prefab:
     - target: {fileID: 400000, guid: c1ece6a75c5792b44994826b829185a5, type: 2}
       propertyPath: m_LocalScale.z
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: c1ece6a75c5792b44994826b829185a5, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1ece6a75c5792b44994826b829185a5, type: 2}
