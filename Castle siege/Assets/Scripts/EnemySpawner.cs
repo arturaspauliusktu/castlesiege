@@ -10,6 +10,11 @@ public class EnemySpawner : MonoBehaviour {
     public Transform spawnpoint;
     private System.Random random;
 
+    public GameObject archer;
+    public GameObject knight;
+    public GameObject fighter;
+    public GameObject catapult;
+
     #region singleton
 
     public static EnemySpawner instance;
@@ -23,12 +28,40 @@ public class EnemySpawner : MonoBehaviour {
 
     #endregion
 
+    private void Start()
+    {
+        InvokeRepeating("autoSpawnArchers", 30, 30);
+        InvokeRepeating("autoSpawnFighter", 20, 20);
+        InvokeRepeating("autoSpawnKnight", 60, 60);
+
+
+    }
+
     public bool SpawnUnit(GameObject unit)
     {
 
-        Instantiate(unit, spawnpoint.position + RandomPoint(), spawnpoint.rotation);
-
+        GameObject obj = Instantiate(unit, spawnpoint.position + RandomPoint(), spawnpoint.rotation);
+        obj.SetActive(true);
         return true;
+    }
+
+    private void autoSpawnArchers()
+    {
+        SpawnUnit(archer);
+    }
+
+    private void autoSpawnKnight()
+    {
+        SpawnUnit(knight);
+    }
+
+    private void autoSpawnFighter()
+    {
+        SpawnUnit(fighter);
+    }
+    private void autoSpawnCatapult()
+    {
+        SpawnUnit(catapult);
     }
 
     private Vector3 RandomPoint()
