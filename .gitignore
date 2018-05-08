@@ -3,6 +3,7 @@
 [Oo]bj/
 [Bb]uild/
 [Bb]uilds/
+Assets/AssetStoreTools*
 Castle siege/Assets/WA11.unity
 Castle siege/Castle siege.sln
 Castle siege/Library/CurrentLayout.dwlt

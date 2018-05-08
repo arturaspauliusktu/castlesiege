@@ -8,10 +8,6 @@ public class SettingsManager : MonoBehaviour {
 
     public Toggle fullscreenToggle;
     public Dropdown resolutionDropdown;
-    public Dropdown textureQualityDropdown;
-    public Dropdown antialiasingDropdown;
-    public Dropdown vSyncDropdown;
-
     public Button applyButton;
 
     public Resolution[] resolutions;
@@ -23,10 +19,6 @@ public class SettingsManager : MonoBehaviour {
 
         fullscreenToggle.onValueChanged.AddListener(delegate { OnFullscreenToggle(); });
         resolutionDropdown.onValueChanged.AddListener(delegate { OnResolutionChange(); });
-        textureQualityDropdown.onValueChanged.AddListener(delegate { OnTextureQualityChange(); });
-        antialiasingDropdown.onValueChanged.AddListener(delegate { OnAntialiasingChange(); });
-        vSyncDropdown.onValueChanged.AddListener(delegate { OnVSyncChange(); });
-
         applyButton.onClick.AddListener(delegate { OnApplyButtonClick(); });
 
         resolutions = Screen.resolutions;
@@ -49,21 +41,6 @@ public class SettingsManager : MonoBehaviour {
         gameSettings.resolutionIndex = resolutionDropdown.value;
     }
 
-    public void OnTextureQualityChange()
-    {
-        QualitySettings.masterTextureLimit = gameSettings.textureQuality = textureQualityDropdown.value;
-    }
-
-    public void OnAntialiasingChange()
-    {
-        QualitySettings.antiAliasing = gameSettings.antialiasing = (int)Mathf.Pow(2, antialiasingDropdown.value);
-    }
-
-    public void OnVSyncChange()
-    {
-        QualitySettings.vSyncCount = gameSettings.vSync = vSyncDropdown.value;
-    }
-
     public void OnApplyButtonClick()
     {
         SaveSettings();
@@ -79,18 +56,14 @@ public class SettingsManager : MonoBehaviour {
     {
         gameSettings = JsonUtility.FromJson<GameSettings>(File.ReadAllText(Application.persistentDataPath + "/gamesettings.json"));
 
+        resolutionDropdown.value = gameSettings.resolutionIndex;
         fullscreenToggle.isOn = gameSettings.fullscreen;
         Screen.fullScreen = gameSettings.fullscreen;
-        resolutionDropdown.value = gameSettings.resolutionIndex;
-        textureQualityDropdown.value = gameSettings.textureQuality;
-        antialiasingDropdown.value = gameSettings.antialiasing;
-        vSyncDropdown.value = gameSettings.vSync;
 
         resolutionDropdown.RefreshShownValue();
     }
 
-	void Update ()
-    {
+	void Update () {
 		
 	}
 }
