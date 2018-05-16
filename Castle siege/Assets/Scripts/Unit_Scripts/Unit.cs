@@ -5,11 +5,17 @@ using UnityEngine.AI;
 using UnityEngine.Events;
 using System.Linq;
 
-public class Unit : MonoBehaviour {
-
+public class Unit : MonoBehaviour
+{
+    //Kill Counter singletone for unit count 
+    KillCounter KC;
     public UnitStats stats;
     public UnitState state = UnitState.Idle;
     public Animator animator;
+    private SpriteRenderer selectionCircle;
+    protected bool isRunning;
+
+    public UnityAction<Unit> OnDie;
 
     public enum UnitState
     {
@@ -32,16 +38,44 @@ public class Unit : MonoBehaviour {
     protected bool isReady = false;
     protected float lastGuardCheckTime, guardCheckInterval = 1f;
 
-    private void Awake()
+    protected virtual void Awake()
     {
+        //Priskiriamas KillCounter
+        KC = GameObject.FindObjectOfType<KillCounter>();
+        if (gameObject.tag == "Attacker") KC.AddAtk();
+
         agent = GetComponent<NavMeshAgent>();
-        
+
+        animator = GetComponent<Animator>();
+
+        selectionCircle = transform.Find("SelectionCircle").GetComponent<SpriteRenderer>();
+
     }
 
     // Use this for initialization
-    void Start () {
+    protected virtual void Start()
+    {
         stats = Instantiate<UnitStats>(stats);
-        animator = GetComponent<Animator>();
+
+        if (stats.side == UnitStats.Sides.Attacker)
+        {
+            UnitManager.instance.units.Add(this);
+        }
+
+        if (stats.side == UnitStats.Sides.Defender && stats.unitType != UnitStats.UnitType.King && stats.unitType != UnitStats.UnitType.Door)
+        {
+            UnitManager.instance.DefenderUnits.Add(this);
+        }
+
+        if (stats.unitType == UnitStats.UnitType.King)
+        {
+            UnitManager.instance.king = this;
+        }
+
+        if (stats.unitType == UnitStats.UnitType.Door)
+        {
+            UnitManager.instance.door = this;
+        }
     }
 
     //Gauna damage jei uzkrenta ant unito kazkas.
@@ -60,7 +94,8 @@ public class Unit : MonoBehaviour {
     //}
 
     // Update is called once per frame
-    void Update() {
+    protected virtual void Update()
+    {
 
         //Cia toks hackas kad agentas gautu laiko nustatyti kito kelio taska.
         if (!isReady)
@@ -177,7 +212,7 @@ public class Unit : MonoBehaviour {
     }
 
     //move to a position and be idle
-    private void GoToAndIdle(Vector3 location)
+    protected virtual void GoToAndIdle(Vector3 location)
     {
         animator.SetBool("Moving", true);
         state = UnitState.MovingToSpotIdle;
@@ -189,7 +224,7 @@ public class Unit : MonoBehaviour {
     }
 
     //move to a position and be guarding
-    private void GoToAndGuard(Vector3 location)
+    protected virtual void GoToAndGuard(Vector3 location)
     {
         animator.SetBool("Moving", true);
         state = UnitState.MovingToSpotGuard;
@@ -201,7 +236,7 @@ public class Unit : MonoBehaviour {
     }
 
     //stop and stay Idle
-    private void Stop()
+    protected virtual void Stop()
     {
         animator.SetBool("Moving", false);
         state = UnitState.Idle;
@@ -213,7 +248,7 @@ public class Unit : MonoBehaviour {
     }
 
     //stop but watch for enemies nearby
-    public void Guard()
+    public virtual void Guard()
     {
         animator.SetBool("Moving", false);
         state = UnitState.Guarding;
@@ -225,7 +260,7 @@ public class Unit : MonoBehaviour {
     }
 
     //move towards a target to attack it
-    private void MoveToAttack(Unit target)
+    protected virtual void MoveToAttack(Unit target)
     {
         if (!IsDeadOrNull(target))
         {
@@ -246,7 +281,7 @@ public class Unit : MonoBehaviour {
     }
 
     //reached the target (within engageDistance), time to attack
-    private void StartAttacking()
+    protected virtual void StartAttacking()
     {
         //somebody might have killed the target while this Unit was approaching it
         if (!IsDeadOrNull(target))
@@ -254,7 +289,7 @@ public class Unit : MonoBehaviour {
             state = UnitState.Attacking;
             isReady = false;
             agent.isStopped = true;
-            StartCoroutine(DealAttack());
+            if (!isRunning) StartCoroutine(DealAttack());
         }
         else
         {
@@ -263,17 +298,18 @@ public class Unit : MonoBehaviour {
     }
 
     //the single blows
-    private IEnumerator DealAttack()
+    protected virtual IEnumerator DealAttack()
     {
+        isRunning = true;
         animator.SetTrigger("Attack1Trigger");
         while (target != null)
         {
-            
+
             //Kautyniu animacija
             target.SufferAttack(stats.attackPower);
             animator.SetBool("Moving", false);
 
-            yield return new WaitForSeconds(2f / stats.attackSpeed);
+            yield return new WaitForSeconds(stats.attackSpeed);
 
             //check is performed after the wait, because somebody might have killed the target in the meantime
             if (IsDeadOrNull(target))
@@ -293,6 +329,7 @@ public class Unit : MonoBehaviour {
             {
                 MoveToAttack(target);
             }
+            isRunning = false;
         }
 
 
@@ -304,7 +341,7 @@ public class Unit : MonoBehaviour {
     }
 
     //called by an attacker
-    private void SufferAttack(int damage)
+    public virtual void SufferAttack(int damage)
     {
         if (state == UnitState.Dead)
         {
@@ -322,7 +359,7 @@ public class Unit : MonoBehaviour {
         }
     }
 
-    private Unit GetNearestHostileUnit()
+    protected virtual Unit GetNearestHostileUnit()
     {
         enemies = GameObject.FindGameObjectsWithTag(stats.GetOtherSide().ToString()).Select(x => x.GetComponent<Unit>()).ToArray();
 
@@ -357,6 +394,13 @@ public class Unit : MonoBehaviour {
         Debug.Log(gameObject.ToString() + " Just died");
         state = UnitState.Dead;
 
+        if (OnDie != null)
+        {
+            OnDie(this);
+        }
+        if (gameObject.tag == "Attacker") KC.RemAtk();
+        if (gameObject.tag == "Defender") KC.RemDef();
+
         gameObject.tag = "Untagged"; //Kad kiti agentai nepultu lavono.
         gameObject.layer = 0;
 
@@ -365,6 +409,7 @@ public class Unit : MonoBehaviour {
         Destroy(gameObject.GetComponent<MeshFilter>());
         Destroy(gameObject.GetComponent<BoxCollider>());
         Destroy(gameObject.GetComponent<Rigidbody>());
+        Destroy(gameObject.GetComponent<Commands>());
     }
 
     /// <summary>
@@ -373,12 +418,20 @@ public class Unit : MonoBehaviour {
     /// </summary>
     /// <param name="u">unitas</param>
     /// <returns>grazina true arba false</returns>
-    private bool IsDeadOrNull(Unit u)
+    public static bool IsDeadOrNull(Unit u)
     {
         return (u == null || u.state == UnitState.Dead);
     }
 
-    private void OnDrawGizmos()
+    public void SetSelected(bool selected)
+    {
+        //Set transparency dependent on selection
+        Color newColor = selectionCircle.color;
+        newColor.a = (selected) ? 1f : .5f;
+        selectionCircle.color = newColor;
+    }
+
+    protected virtual void OnDrawGizmos()
     {
         if (agent != null
             && agent.isOnNavMesh
