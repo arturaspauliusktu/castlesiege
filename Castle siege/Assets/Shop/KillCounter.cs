@@ -54,6 +54,11 @@ public class KillCounter : MonoBehaviour {
         attackersText.text = aliveAtk.ToString() + " / " + attackers.ToString();
     }
 
+    public int getAttackers()
+    {
+        return attackers;
+    }
+
     // Update is called once per frame
     void Update ()
     {

@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour {
 
-
     public float radius = 10;
     public Transform spawnpoint;
     private System.Random random;
@@ -31,15 +30,26 @@ public class EnemySpawner : MonoBehaviour {
     private void Start()
     {
         random = new System.Random();
-        InvokeRepeating("autoSpawnArchers", 30, 30);
-        InvokeRepeating("autoSpawnFighter", 20, 20);
-        InvokeRepeating("autoSpawnKnight", 60, 60);
+        //InvokeRepeating("autoSpawnArchers", ArcherSpawnSpeed, ArcherSpawnSpeed);
+        //InvokeRepeating("autoSpawnFighter", FighterSpawnSpeed, FighterSpawnSpeed);
+        //InvokeRepeating("autoSpawnKnight", KnightSpawnSpeed, KnightSpawnSpeed);
+    }
+
+    public void ResetDificulty(int archerSpawnSpeed, int fighterSpawnSpeed, int knightSpawnSpeed)
+    {
+        CancelInvoke();
+        InvokeRepeating("autoSpawnArchers", archerSpawnSpeed, archerSpawnSpeed);
+        InvokeRepeating("autoSpawnFighter", fighterSpawnSpeed, fighterSpawnSpeed);
+        InvokeRepeating("autoSpawnKnight", knightSpawnSpeed, knightSpawnSpeed);
     }
 
     public bool SpawnUnit(GameObject unit)
     {
 
         GameObject obj = Instantiate(unit, spawnpoint.position + RandomPoint(), spawnpoint.rotation);
+        //2-handed warior unit spalvinimas raudonai
+        if(obj.transform.GetChild(1).GetComponent<Renderer>())
+            obj.transform.GetChild(1).GetComponent<Renderer>().material.color = Color.red;
         obj.SetActive(true);
         return true;
     }
