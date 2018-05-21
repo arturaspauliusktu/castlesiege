@@ -59,6 +59,11 @@ public class KillCounter : MonoBehaviour {
         return attackers;
     }
 
+    public int getAliveAttackers()
+    {
+        return aliveAtk;
+    }
+
     // Update is called once per frame
     void Update ()
     {

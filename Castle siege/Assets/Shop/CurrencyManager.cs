@@ -12,19 +12,22 @@ public class CurrencyManager : MonoBehaviour {
     public Text gold;
     int currency;
     int tick;
+    bool isIncreasing;
 
     // Use this for initialization
     void Start () {
+        isIncreasing = true;
         tick = 60;
         currency = startingCurrency;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (DateTime.Now.Second != tick)
+        if (DateTime.Now.Second != tick )
         {
             tick = DateTime.Now.Second;
-            currency += currencyIncreesePerTime;
+            if(isIncreasing)
+                currency += currencyIncreesePerTime;
             gold.text = currency.ToString();
         }
 	}
@@ -42,5 +45,15 @@ public class CurrencyManager : MonoBehaviour {
             return true;
         }
         return false;
+    }
+
+    public void StopCurrencyIncrease()
+    {
+        isIncreasing = false;
+    }
+
+    public void StartCurrencyIncrease()
+    {
+        isIncreasing = true;
     }
 }

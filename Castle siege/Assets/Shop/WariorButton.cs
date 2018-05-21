@@ -8,9 +8,12 @@ public class WariorButton : MonoBehaviour {
     WallPlacer1 WP;
     CurrencyManager CM;
     public int price;
+    bool isEnabled;
 
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
+        isEnabled = true;
         WP = FindObjectOfType<WallPlacer1>();
         CM = FindObjectOfType<CurrencyManager>();
         price = WP.wariorPrice;
@@ -29,7 +32,7 @@ public class WariorButton : MonoBehaviour {
     }
 
     public void EnableBuild () {
-        if (CM.GetCurrency() >= price)
+        if (CM.GetCurrency() >= price && isEnabled)
         {
             if (WP.isBuildEnabled)
             {
@@ -43,4 +46,15 @@ public class WariorButton : MonoBehaviour {
             }
         }
 	}
+
+
+    public void EnableButton()
+    {
+        isEnabled = true;
+    }
+
+    public void DisableButton()
+    {
+        isEnabled = false;
+    }
 }

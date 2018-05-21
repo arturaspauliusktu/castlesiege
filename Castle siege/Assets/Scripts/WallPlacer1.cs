@@ -202,6 +202,7 @@ public class WallPlacer1 : MonoBehaviour
                 }
                 buildObject.transform.position = finalPosition;
                 buildObject.transform.rotation = finalRotation;
+                buildObject.transform.position += new Vector3(0, -3, 0);
                 //GameObject wallInstance = Instantiate(wallToBuild, finalPosition, new Quaternion(-90, 0, 0, 90));
                 //wallToBuild.AddComponent<Rigidbody>();
                 //wallToBuild.AddComponent<BoxCollider>();

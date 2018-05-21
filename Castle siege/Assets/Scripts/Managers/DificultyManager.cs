@@ -5,19 +5,19 @@ using UnityEngine.UI;
 
 public class DificultyManager : MonoBehaviour {
 
-    public int Dificulty;
-    public int DificultyIncrease;
-    public int WaveCount;
+    public static int Dificulty;
+    public static int DificultyIncrease;
+    public static int WaveCount;
     public Text WaveText;
     int enemeysInWave;
     int enemeysUntilDificultyIncrease;
-    int currentWave;
+    public int currentWave;
     CurrencyManager CM;
     EnemySpawner ES;
     KillCounter KC;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
         CM = GameObject.FindObjectOfType<CurrencyManager>();
         ES = GameObject.FindObjectOfType<EnemySpawner>();
@@ -34,8 +34,15 @@ public class DificultyManager : MonoBehaviour {
         WaveText.text = "Wave: " + currentWave + "/" + WaveCount + "    Enemies: " + (KC.getAttackers() + enemeysInWave - enemeysUntilDificultyIncrease) + "/" + enemeysInWave;
         if (KC.getAttackers() > enemeysUntilDificultyIncrease)
         {
-            Dificulty += DificultyIncrease;
-            changeDificulty();
+            if(currentWave == WaveCount)
+            {
+                endSpawning();
+            }
+            else
+            {
+                Dificulty += DificultyIncrease;
+                changeDificulty();
+            }
         }
     }
 
@@ -45,5 +52,22 @@ public class DificultyManager : MonoBehaviour {
         enemeysInWave = Dificulty * 2;
         enemeysUntilDificultyIncrease += enemeysInWave;
         currentWave++;
+    }
+
+    void endSpawning()
+    {
+        ES.ResetDificulty(999, 999, 999);
+    }
+
+    public int GetWaveCount()
+    {
+        return WaveCount;
+    }
+
+    public void SetDificulty(int dificulty, int increase, int count)
+    {
+        Dificulty = dificulty;
+        DificultyIncrease = increase;
+        WaveCount = count;
     }
 }

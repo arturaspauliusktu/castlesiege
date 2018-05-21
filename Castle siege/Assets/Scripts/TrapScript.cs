@@ -23,7 +23,9 @@ public class TrapScript : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<Unit>().GetType().Equals(new Unit().GetType()))
+        if (other.gameObject.GetComponent<Unit>().GetType().Equals(new Unit_Knight().GetType()) ||
+            other.gameObject.GetComponent<Unit>().GetType().Equals(new Unit_Fighter().GetType()) ||
+            other.gameObject.GetComponent<Unit>().GetType().Equals(new Unit_Archer().GetType()) )
         {
             Debug.Log("ENTER trap");
             Unit n = other.gameObject.GetComponent<Unit>();
@@ -31,7 +33,7 @@ public class TrapScript : MonoBehaviour {
             if (wariorsIncide.Count >= captureCount && trapSet)
             {
                 anim.SetTrigger("TrapsTriggered");
-                gameObject.transform.position += new Vector3(0, 1, 0);
+                gameObject.transform.position += new Vector3(0, 2, 0);
                 for (int i = 0; i < wariorsIncide.Count; i++)
                 {
                     Debug.Log("Killing unit");
