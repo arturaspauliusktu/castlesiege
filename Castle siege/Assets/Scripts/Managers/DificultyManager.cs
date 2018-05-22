@@ -48,7 +48,7 @@ public class DificultyManager : MonoBehaviour {
 
     void changeDificulty()
     {
-        ES.ResetDificulty(60 / Dificulty + 1, 40 / Dificulty + 1, 30 / Dificulty + 1);
+        ES.ResetDificulty(60 / Dificulty + 1, 40 / Dificulty + 1, 30 / Dificulty + 1, 120 / Dificulty + 1);
         enemeysInWave = Dificulty * 2;
         enemeysUntilDificultyIncrease += enemeysInWave;
         currentWave++;
@@ -56,7 +56,7 @@ public class DificultyManager : MonoBehaviour {
 
     void endSpawning()
     {
-        ES.ResetDificulty(999, 999, 999);
+        ES.ResetDificulty(999, 999, 999, 999);
     }
 
     public int GetWaveCount()

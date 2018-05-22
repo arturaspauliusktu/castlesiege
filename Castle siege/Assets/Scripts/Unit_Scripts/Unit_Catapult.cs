@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Unit_Catapult : Unit_Archer {
 
@@ -33,6 +34,38 @@ public class Unit_Catapult : Unit_Archer {
         animator.SetTrigger("Attack1Trigger");
     }
 
+    protected override Unit GetNearestHostileUnit()
+    {
+        enemies = GameObject.FindGameObjectsWithTag("Defender").Select(x => x.GetComponent<Unit>()).ToArray();
+        Unit[] walls = GameObject.FindGameObjectsWithTag("Wall").Select(x => x.GetComponent<Unit>()).ToArray();
+        List<Unit> merge = new List<Unit>();
+        merge.AddRange(enemies);
+        merge.AddRange(walls);
+        enemies = merge.ToArray();
+        Unit nearestEnemy = null;
+        float nearestEnemyDistance = 1000f;
+        for (int i = 0; i < enemies.Count(); i++)
+        {
+            if (IsDeadOrNull(enemies[i]))
+            {
+                continue;
+            }
+
+            float distanceFromHostile = Vector3.Distance(enemies[i].transform.position, transform.position);
+            if (distanceFromHostile <= stats.guardDistance)
+            {
+                if (distanceFromHostile < nearestEnemyDistance)
+                {
+                    nearestEnemy = enemies[i];
+                    nearestEnemyDistance = distanceFromHostile;
+                }
+            }
+        }
+
+        return nearestEnemy;
+    }
+
+
     private void Loose()
     {
         Rigidbody newball = (Rigidbody)Instantiate(projectile, spawnpoint.position, spawnpoint.rotation);
@@ -44,6 +77,7 @@ public class Unit_Catapult : Unit_Archer {
 
     protected override void UnitDie()
     {
+        KC.RemAtk();
         Debug.Log(gameObject.ToString() + " Just died");
         state = UnitState.Dead;
 

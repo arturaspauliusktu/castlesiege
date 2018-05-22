@@ -13,6 +13,7 @@ TagManager:
   - Attacker
   - Defender
   - Catapult
+  - Wall
   layers:
   - Default
   - TransparentFX

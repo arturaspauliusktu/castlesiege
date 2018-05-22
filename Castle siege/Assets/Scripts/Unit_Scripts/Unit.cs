@@ -8,7 +8,7 @@ using System.Linq;
 public class Unit : MonoBehaviour
 {
     //Kill Counter singletone for unit count 
-    KillCounter KC;
+    protected KillCounter KC;
     public UnitStats stats;
     public UnitState state = UnitState.Idle;
     public Animator animator;
@@ -79,19 +79,19 @@ public class Unit : MonoBehaviour
     }
 
     //Gauna damage jei uzkrenta ant unito kazkas.
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (state != UnitState.Dead)
-    //        return;
+    protected virtual void OnCollisionEnter(Collision collision)
+    {
+        if (state == UnitState.Dead)
+            return;
 
-    //    if (collision.relativeVelocity.magnitude > 50.0f)
-    //    {
+        if (collision.relativeVelocity.magnitude > 50.0f)
+        {
+            float damage = collision.relativeVelocity.magnitude / 8;
+            SufferAttack((int)damage);
 
-    //        health.giveDamage((int)(collision.relativeVelocity.magnitude / 10));
-    //        Debug.Log(health.getHealth());
-    //    }
+        }
 
-    //}
+    }
 
     // Update is called once per frame
     protected virtual void Update()

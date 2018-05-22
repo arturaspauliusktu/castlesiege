@@ -35,12 +35,13 @@ public class EnemySpawner : MonoBehaviour {
         //InvokeRepeating("autoSpawnKnight", KnightSpawnSpeed, KnightSpawnSpeed);
     }
 
-    public void ResetDificulty(int archerSpawnSpeed, int fighterSpawnSpeed, int knightSpawnSpeed)
+    public void ResetDificulty(int archerSpawnSpeed, int fighterSpawnSpeed, int knightSpawnSpeed, int catapultSpawnSpeed)
     {
         CancelInvoke();
         InvokeRepeating("autoSpawnArchers", archerSpawnSpeed, archerSpawnSpeed);
         InvokeRepeating("autoSpawnFighter", fighterSpawnSpeed, fighterSpawnSpeed);
         InvokeRepeating("autoSpawnKnight", knightSpawnSpeed, knightSpawnSpeed);
+        InvokeRepeating("autoSpawnCatapult", catapultSpawnSpeed, catapultSpawnSpeed);
     }
 
     public bool SpawnUnit(GameObject unit)
