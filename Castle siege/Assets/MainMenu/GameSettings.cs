@@ -5,4 +5,5 @@
     public int textureQuality;
     public int antialiasing;
     public int vSync;
+    public float mainMusicVolume;
 }

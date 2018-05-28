@@ -11,7 +11,9 @@ public class SettingsManager : MonoBehaviour {
     public Dropdown textureQualityDropdown;
     public Dropdown antialiasingDropdown;
     public Dropdown vSyncDropdown;
+    public Slider mainMusicSlider;
 
+    public AudioSource mainMenuMusicSource;
     public Button applyButton;
 
     public Resolution[] resolutions;
@@ -26,6 +28,7 @@ public class SettingsManager : MonoBehaviour {
         textureQualityDropdown.onValueChanged.AddListener(delegate { OnTextureQualityChange(); });
         antialiasingDropdown.onValueChanged.AddListener(delegate { OnAntialiasingChange(); });
         vSyncDropdown.onValueChanged.AddListener(delegate { OnVSyncChange(); });
+        mainMusicSlider.onValueChanged.AddListener(delegate { OnMusicVolumeChange(); });
 
         applyButton.onClick.AddListener(delegate { OnApplyButtonClick(); });
 
@@ -64,6 +67,11 @@ public class SettingsManager : MonoBehaviour {
         QualitySettings.vSyncCount = gameSettings.vSync = vSyncDropdown.value;
     }
 
+    public void OnMusicVolumeChange()
+    {
+        mainMenuMusicSource.volume = gameSettings.mainMusicVolume = mainMusicSlider.value;
+    }
+
     public void OnApplyButtonClick()
     {
         SaveSettings();
@@ -85,6 +93,7 @@ public class SettingsManager : MonoBehaviour {
         textureQualityDropdown.value = gameSettings.textureQuality;
         antialiasingDropdown.value = gameSettings.antialiasing;
         vSyncDropdown.value = gameSettings.vSync;
+        mainMusicSlider.value = gameSettings.mainMusicVolume;
 
         resolutionDropdown.RefreshShownValue();
     }
